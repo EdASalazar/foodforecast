@@ -10,7 +10,7 @@ passport.use(new GoogleStrategy(
         callbackURL: process.env.GOOGLE_CALLBACK
     },
     //verify callback function
-   
+    // LET'S use async/await!
     async function(accessToken, refreshToken, profile, cb) {
         // A user has logged in with OAuth
         try {
