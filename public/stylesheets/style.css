@@ -14,6 +14,16 @@ body {
     "main"
 }
 
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
 a {
   color: #00B7FF;
 }
@@ -24,7 +34,7 @@ body > nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 0 30px 0 30px;
 }
 
 nav > a {
@@ -34,11 +44,24 @@ nav > a {
   border-radius: 5px;
 }
 
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+  
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+}
+
+
 #google-logo {
-  width: 34px;
+  width: 30px;
   object-fit: contain;
   margin-right: auto;
   margin-left: 20px;
+ 
 }
 
 #foodcart-logo {
