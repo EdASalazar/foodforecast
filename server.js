@@ -9,6 +9,7 @@ var methodOverride = require('method-override');
 require('dotenv').config();
 // connect to MongoDb
 require('./config/database');
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
