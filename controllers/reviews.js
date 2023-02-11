@@ -3,6 +3,7 @@ const User = require('../models/user');
 
 module.exports = {
     index,
+    show,
 }
 
 function index(req, res) {
@@ -10,5 +11,11 @@ function index(req, res) {
         User.find({}, function(err, users) {
         res.render('reviews/index', { title: 'Reviews', reviews , users })
         });
+    });
+}
+
+function show(req, res) {
+    Review.findById(req.params.id, function(err, review) {
+        res.render('reviews/show', { title: 'Review Details', review });      
     });
 }

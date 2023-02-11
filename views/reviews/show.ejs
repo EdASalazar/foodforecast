@@ -1,3 +1,25 @@
 <%- include('../partials/header') %>
 
+<table id="details-reviews">
+    <thead>
+        <tr>
+            <th>Vendor</th>
+            <th>Rating</th>
+            <th>Price</th>
+
+            
+    </thead>
+    <tbody>
+           <tr> 
+            <td><%= review.vendor %></td>
+            <td><%= review.rating %></td>
+            <td><%= review.price %></td>
+
+           </tr> 
+
+    </tbody>
+</table>
+
+
+
 <%- include('../partials/footer') %>
