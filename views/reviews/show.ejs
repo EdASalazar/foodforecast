@@ -9,6 +9,9 @@
             <th>Rating</th>
             <th>Price</th>
             <th>Story</th>
+            <th>time stamps</th>
+            <th>Edit</th>
+            <th>Delete</th>
 
             
     </thead>
@@ -21,10 +24,13 @@
             <td><%= review.rating %></td>
             <td><%= review.price %></td>
             <td><%= review.blog %></td>
+            <td></td>
+
             <% if (user?._id.equals(review.user)) { %>
                 <% console.log(review._id, review.id) %>
-            <td><form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button type="submit">DELETE</button></form></td>
-            <% } %>
+                <td><form action="/reviews/<%= review.id %>/edit" method="GET"><button type="submit">EDIT</button></form></td>
+                <td><form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button type="submit">DELETE</button></form></td>
+                <% } %>
            </tr> 
            
     </tbody>

@@ -70,6 +70,7 @@ nav > a.active {
   width: 70px;
   object-fit: contain;
   margin-right: auto;
+  border-radius: 50%;
 }
 
 table {

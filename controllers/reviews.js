@@ -8,11 +8,20 @@ module.exports = {
     new: newReview,
     create,
     delete: deleteReview, 
+    edit, 
+}
+
+function edit(req, res) {
+    res.redirect('/reviews');
 }
 
 function deleteReview(req, res) {
     console.log(req.params.id)
-    res.redirect('/');
+    Review.findById(req.params.id)
+    .then(function(review) {
+        review.deleteOne();
+        res.redirect('/reviews');
+    });
 }
 
 function create(req, res) {

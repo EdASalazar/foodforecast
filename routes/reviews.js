@@ -14,6 +14,8 @@ router.get('/new', ensureLoggedIn, reviewsCtrl.new);
 router.get('/:id', reviewsCtrl.show);
 // DELETE /reviews/:id/delete 
 router.delete('/:id', reviewsCtrl.delete);
+// GET /reviews/:id/edit
+router.get('/:id/edit', reviewsCtrl.edit)
 
 
 module.exports = router;
