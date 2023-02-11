@@ -7,15 +7,13 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
-// Load the "secrets" in the .env file
 require('dotenv').config();
-// Connect to the MongoDB database
 require('./config/database');
-// configure passport middleware
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var reviewsRouter = require('./routes/reviews');
 
 var app = express();
 
