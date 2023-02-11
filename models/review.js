@@ -3,7 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-
+    blog: String,
+    rating: Number,
+    price: Number,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    }
 });
 
 
