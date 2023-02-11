@@ -1,5 +1,22 @@
 <%- include('../partials/header') %>
+    <section id="add-review">
+        <form action="/reviews" method="POST" id="form-review">
+
+            <label>Vendor
+                <input type="text" name="vendor">
+            </label>
+
+            <label>Rating
+                <input type="number" name="rating">
+            </label>
+
+            <label>Price
+                <input type="number" name="price">
+            </label>
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
 
 
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
