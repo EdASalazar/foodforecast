@@ -11,11 +11,11 @@ const review = require('./review');
    },
    email: String,
    avatar: String,
-   reviews: {
+   reviews: [{
     type: Schema.Types.ObjectId,
     ref: 'Review',
     required: true,
-  },
+  }],
  }, {
    timestamps: true
  });
