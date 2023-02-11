@@ -21,7 +21,9 @@
             <td><%= review.rating %></td>
             <td><%= review.price %></td>
             <td><%= review.blog %></td>
-
+            <% if (user?._id.equals(review.user)) { %>
+            <td>test</td>
+            <% } %>
            </tr> 
            
     </tbody>
