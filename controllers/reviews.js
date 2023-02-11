@@ -6,6 +6,16 @@ module.exports = {
     show,
     new: newReview,
     create,
+    delete: deleteReview, 
+}
+
+function deleteReview(req, res) {
+    Review.findById(req.params.id)
+    .then(function(review) {
+        console.log(req.params.id);
+        review.remove(req.params.id);
+        res.redirect('/reviews/');
+    });
 }
 
 function create(req, res) {
