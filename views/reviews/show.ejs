@@ -27,7 +27,6 @@
             <td></td>
 
             <% if (user?._id.equals(review.user)) { %>
-                <% console.log(review._id, review.id) %>
                 <td><form action="/reviews/<%= review.id %>/edit" method="GET"><button type="submit">EDIT</button></form></td>
                 <td><form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button type="submit">DELETE</button></form></td>
                 <% } %>
@@ -48,8 +47,19 @@
             
         </td>
     </tr>
-
-
 </table>
+
+    <% if (user) { %>
+        <h2>Add Comments</h2>
+        <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
+            <label for="comment-feedback">What's on your mind?
+                <textarea name="feedback"></textarea> 
+            </label>
+            <button type="submit">Let Everyone Know</button>
+        </form>
+
+
+    <% } %>
+
 
 <%- include('../partials/footer') %>

@@ -9,6 +9,10 @@ const reviewSchema = new Schema({
     price: Number,
     userName: String,
     userAvatar: String,
+    comment: {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment',
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
