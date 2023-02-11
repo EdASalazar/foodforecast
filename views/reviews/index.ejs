@@ -9,7 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <%  %>
+        <% reviews.forEach(function(r) { %>
+            <td><%= r.vendor %></td>
+            <td><%= r.rating %></td>
+            <td><%= r.price %></td>
+            <td>USER</td>
+       <% }); %>
     </tbody>
 </table>
 
