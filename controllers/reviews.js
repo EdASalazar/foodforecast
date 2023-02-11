@@ -6,6 +6,7 @@ module.exports = {
 }
 
 function index(req, res) {
-    
-
+    Review.find({}, function(err, reviews) {
+        res.render('reviews/index', { title: 'Reviews', reviews })
+    });
 }

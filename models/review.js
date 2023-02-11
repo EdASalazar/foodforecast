@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
+    vendor: String,
     blog: String,
     rating: Number,
     price: Number,

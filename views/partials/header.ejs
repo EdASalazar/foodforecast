@@ -12,7 +12,7 @@
     <nav>
       <img src="/images/foodcart-logo.png" alt="foodcart-logo" id="foodcart-logo">
       <a href="/">Home</a>
-      <a href="/reviews/">Reviews</a>
+      <a href="/reviews/" <%- title === 'Reviews' ? 'class="active"' : '' %>>Reviews</a>
       <% if (user) { %>
         <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ><%= user.name %>
         <a href="/logout">LOG OUT</a>
@@ -21,4 +21,4 @@
         <% } %>
     </nav>
     <main>
-      <h1><%= title %>!</h1>
+      <h1><%= title %></h1>
