@@ -43,7 +43,9 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
+// do I need this? I don't think so.
 app.use('/users', usersRouter);
+app.use('/reviews', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
