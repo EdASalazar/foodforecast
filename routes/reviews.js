@@ -13,7 +13,7 @@ router.get('/new', ensureLoggedIn, reviewsCtrl.new);
 // GET /reviews/:id show
 router.get('/:id', reviewsCtrl.show);
 // DELETE /reviews/:id/delete 
-router.delete('/:id/delete', ensureLoggedIn, reviewsCtrl.delete);
+router.delete('/:id', reviewsCtrl.delete);
 
 
 module.exports = router;

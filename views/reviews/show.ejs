@@ -22,7 +22,8 @@
             <td><%= review.price %></td>
             <td><%= review.blog %></td>
             <% if (user?._id.equals(review.user)) { %>
-            <td><a href="/reviews/<%= review._id %>?_method=DELETE" method="POST">Delete</a></td>
+                <% console.log(review._id, review.id) %>
+            <td><form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button type="submit">DELETE</button></form></td>
             <% } %>
            </tr> 
            
