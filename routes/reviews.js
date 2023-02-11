@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const reviewsCtrl = require('../contollers/reviews');
+const reviewsCtrl = require('../controllers/reviews')
 
 
 //all routes start with reviews. 
