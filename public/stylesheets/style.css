@@ -99,3 +99,8 @@ table td {
   justify-content: space-between;
   padding: 10px;
 }
+
+#nav-avatar {
+  border-radius: 50%;
+  object-fit: contain;
+}

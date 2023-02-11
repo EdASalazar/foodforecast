@@ -18,7 +18,7 @@
       <% if (user) { %>
         <a href="/reviews/new" <%- title === 'Add Review' ? 'class="active"' : '' %>>Add Reviews</a>
       |
-        <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ><%= user.name %>
+        <img alt="avatar" id="nav-avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ><%= user.name %>
       |
         <a href="/logout">LOG OUT</a>
       <% } else { %> 
