@@ -32,12 +32,24 @@
                 <td><form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button type="submit">DELETE</button></form></td>
                 <% } %>
            </tr> 
-           <tr id="table-comments">
-                <td>Comment: </td>
-           </tr>
-    </tbody>
+        </tbody>
+    </table>
+    
+<table id="add-comment">
+    <thead>
+        <tr>
+            <th>
+                Comments: 
+            </th>
+        </tr>
+    </thead>
+    <tr>
+        <td>
+            
+        </td>
+    </tr>
+
+
 </table>
-
-
 
 <%- include('../partials/footer') %>
