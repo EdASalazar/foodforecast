@@ -7,6 +7,8 @@ const reviewSchema = new Schema({
     blog: String,
     rating: Number,
     price: Number,
+    userName: String,
+    userAvatar: String,
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

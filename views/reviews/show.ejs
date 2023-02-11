@@ -3,17 +3,24 @@
 <table id="details-reviews">
     <thead>
         <tr>
+            <th><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ></th>
+            <th>Author</th>
             <th>Vendor</th>
             <th>Rating</th>
             <th>Price</th>
+            <th>Story</th>
 
             
     </thead>
     <tbody>
            <tr> 
+            
+            <td></td>
+            <td><%= review.userName %></td>
             <td><%= review.vendor %></td>
             <td><%= review.rating %></td>
             <td><%= review.price %></td>
+            <td><%= review.blog %></td>
 
            </tr> 
            
