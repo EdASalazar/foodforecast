@@ -1,5 +1,6 @@
 const Review = require('../models/review');
 const User = require('../models/user');
+const Comment = require('../models/comment');
 
 module.exports = {
     index,
@@ -15,7 +16,6 @@ function edit(req, res) {
 }
 
 function deleteReview(req, res) {
-    console.log(req.params.id)
     Review.findById(req.params.id)
     .then(function(review) {
         review.deleteOne();
@@ -48,9 +48,13 @@ function index(req, res) {
 
 function show(req, res) {
     Review.findById(req.params.id, function(err, review) {
-        res.render('reviews/show', { title: 'Review Details', review });      
+        Comment.find({review: review._id}, function(err, comment) {
+        res.render('reviews/show', { title: 'Review Details', review , comment });
+              
+        });      
     });
 }
+
 
 function newReview(req, res) {
     res.render('reviews/new', { title: 'Add Review',})

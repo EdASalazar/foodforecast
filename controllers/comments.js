@@ -7,5 +7,13 @@ module.exports = {
 }
 
 function create(req, res) {
-    res.redirect('/');
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.review = req.params.id;
+    const comment = new Comment(req.body);
+        comment.save(function(err) {
+            if (err) return res.redirect('/reviews/index');
+            res.redirect(`/reviews/${req.params.id}`);
+
+        });
 }
