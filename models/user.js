@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const { reviews } = require('../data');
+const review = require('./review');
  const Schema = mongoose.Schema;
 
  const userSchema = new Schema({
@@ -8,7 +10,12 @@ const mongoose = require('mongoose');
     required: true,
    },
    email: String,
-   avatar: String
+   avatar: String,
+   reviews: {
+    type: Schema.Types.ObjectId,
+    ref: 'Review',
+    required: true,
+  },
  }, {
    timestamps: true
  });

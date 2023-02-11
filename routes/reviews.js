@@ -7,4 +7,6 @@ const reviewsCtrl = require('../controllers/reviews')
 // GET /reviews 
 router.get('/', reviewsCtrl.index);
 
+
+
 module.exports = router;

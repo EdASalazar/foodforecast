@@ -5,20 +5,20 @@
             <th>Vendor</th>
             <th>Rating</th>
             <th>Price</th>
-            <th>Author</th>
-        </tr>
+            <th>More Info</th>
+            
     </thead>
     <tbody>
         <% reviews.forEach(function(r) { %>
+           <tr> 
             <td><%= r.vendor %></td>
             <td><%= r.rating %></td>
             <td><%= r.price %></td>
-            <td>USER</td>
+            <td><a href="/reviews/<%= r._id %>">Details</a></td>
+           </tr> 
+            
        <% }); %>
     </tbody>
 </table>
-<section>
-    <input type="">
-</section>
 
 <%- include('../partials/footer') %>
