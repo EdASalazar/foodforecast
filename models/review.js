@@ -9,6 +9,11 @@ const reviewSchema = new Schema({
     price: Number,
     userName: String,
     userAvatar: String,
+    vendorImg: { 
+        data: Buffer,
+        contentType: String
+
+    },
     comment: {
         type: Schema.Types.ObjectId,
         ref: 'Comment',
@@ -16,7 +21,7 @@ const reviewSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        // required: true,
+        required: true,
     },
 }, {
     timestamps: true

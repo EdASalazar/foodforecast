@@ -18,7 +18,7 @@
         <tbody>
             <tr>
 
-                <td></td>
+                <td><%= vendorImg %></td>
                 <td>
                     <%= review.userName %>
                 </td>
@@ -63,8 +63,9 @@
         <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
             <label for="comment-feedback">What's on your mind?
                 <textarea name="feedback"></textarea>
-            </label><br>
-            <label for=""> How helpful was this review?
+            </label>
+            <br>
+            <label> How helpful was this review?
                 <input type="number" name="rateReview"></input>
             </label> 
             <br>
