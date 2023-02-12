@@ -48,9 +48,9 @@ function index(req, res) {
 
 function show(req, res) {
     Review.findById(req.params.id, function(err, review) {
+        console.log(review._id);
         Comment.find({review: review._id}, function(err, comment) {
-        res.render('reviews/show', { title: 'Review Details', review , comment });
-              
+        res.render('reviews/show', { title: 'Review Details', review , comment });        
         });      
     });
 }

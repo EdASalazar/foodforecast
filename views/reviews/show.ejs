@@ -38,13 +38,19 @@
     <thead>
         <tr>
             <th>
-                Comments: <%= comment.feedback %>
+                Comments: 
             </th>
+
         </tr>
     </thead>
     <tr>
         <td>
-            
+            Words: <%= comment.feedback %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            #: <%= comment.rateReview %>
         </td>
     </tr>
 </table>
@@ -54,6 +60,9 @@
         <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
             <label for="comment-feedback">What's on your mind?
                 <textarea name="feedback"></textarea> 
+            </label><br>
+            <label for=""> How helpful was this review?
+                <input type="number" name="rateReview"></input>
             </label>
             <button type="submit">Let Everyone Know</button>
         </form>
