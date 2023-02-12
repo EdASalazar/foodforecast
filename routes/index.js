@@ -22,7 +22,7 @@ router.get('/oauth2callback', passport.authenticate(
   {
     successRedirect: '/reviews',
     //change to what's best for your app
-    failureRedirect: '/',
+    failureRedirect: '/reviews',
   }
 ));
 
@@ -30,7 +30,7 @@ router.get('/oauth2callback', passport.authenticate(
 router.get('/logout', function(req, res) {
   req.logout(function() {
     // change path for your landing page
-    res.redirect('/');
+    res.redirect('/reviews');
   });
 });
 

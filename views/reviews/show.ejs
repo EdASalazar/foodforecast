@@ -1,74 +1,78 @@
 <%- include('../partials/header') %>
 
-<table id="details-reviews">
-    <thead>
-        <tr>
-            <th><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ></th>
-            <th>Author</th>
-            <th>Vendor</th>
-            <th>Rating</th>
-            <th>Price</th>
-            <th>Story</th>
-            <th>time stamps</th>
-            <th>Edit</th>
-            <th>Delete</th>
+    <table id="details-reviews">
+        <thead>
+            <tr>
+                <th><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer"></th>
+                <th>Author</th>
+                <th>Vendor</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Story</th>
+                <th>time stamps</th>
+                <th>Edit</th>
+                <th>Delete</th>
 
-            
-    </thead>
-    <tbody>
-           <tr> 
-            
-            <td></td>
-            <td><%= review.userName %></td>
-            <td><%= review.vendor %></td>
-            <td><%= review.rating %></td>
-            <td><%= review.price %></td>
-            <td><%= review.blog %></td>
-            <td></td>
 
-            <% if (user?._id.equals(review.user)) { %>
-                <td><form action="/reviews/<%= review.id %>/edit" method="GET"><button type="submit">EDIT</button></form></td>
-                <td><form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button type="submit">DELETE</button></form></td>
-                <% } %>
-           </tr> 
+        </thead>
+        <tbody>
+            <tr>
+
+                <td></td>
+                <td>
+                    <%= review.userName %>
+                </td>
+                <td>
+                    <%= review.vendor %>
+                </td>
+                <td>
+                    <%= review.rating %>
+                </td>
+                <td>
+                    <%= review.price %>
+                </td>
+                <td>
+                    <%= review.blog %>
+                </td>
+                <td></td>
+
+                <% if (user?._id.equals(review.user)) { %>
+                    <td>
+                        <form action="/reviews/<%= review.id %>/edit" method="GET"><button type="submit">EDIT</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button
+                                type="submit">DELETE</button></form>
+                    </td>
+                    <% } %>
+            </tr>
         </tbody>
     </table>
-    
-<table id="add-comment">
-    <thead>
-        <tr>
-            <th>
-                Comments: 
-            </th>
 
-        </tr>
-    </thead>
-    <tr>
-        <td>
-            Words: <%= comment.feedback %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            #: <%= comment.rateReview %>
-        </td>
-    </tr>
-</table>
-
+    <table id="add-comment">
+            <% comment.forEach(function(c)  { %> 
+               <tr><td> Words: <%= c.feedback %> </td>
+                <td> #: <%= c.rateReview %> </td>
+                <td> Name: <%= c.userName %> </td></tr>
+            <% }); %>
+          
+    </table>
     <% if (user) { %>
         <h2>Add Comments</h2>
         <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
             <label for="comment-feedback">What's on your mind?
-                <textarea name="feedback"></textarea> 
+                <textarea name="feedback"></textarea>
             </label><br>
             <label for=""> How helpful was this review?
                 <input type="number" name="rateReview"></input>
-            </label>
+            </label> 
+            <br>
             <button type="submit">Let Everyone Know</button>
         </form>
 
 
-    <% } %>
+        <% } %>
 
 
-<%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>
