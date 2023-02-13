@@ -16,6 +16,7 @@ router.get('/:id', reviewsCtrl.show);
 router.delete('/:id', reviewsCtrl.delete);
 // GET /reviews/:id/edit
 router.get('/:id/edit', reviewsCtrl.edit)
+// POST /reviews/:id/favorite
 
 
 module.exports = router;

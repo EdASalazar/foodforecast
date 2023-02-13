@@ -25,6 +25,7 @@
                 <td> <%= review.price %></td>
                 <td> <%= review.blog %></td>
                 <td><%= review.createdAt %></td>
+              
 
                 <% if (user?._id.equals(review.user)) { %>
                     <td>
@@ -56,23 +57,27 @@
           
     </table>
     <% if (user) { %>
-        <h2>Add Comments</h2>
+    <h2>Add Comments</h2>
+    <table>
         <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
-            <label>What's on your mind?</label>
-                <textarea name="feedback" rows=1></textarea><br>
-            <label> How helpful was this review?</label>
-            <select name="rateReview">
+            <tr><td>What's on your mind?</td>
+               <td><textarea name="feedback" rows=1></textarea></td></tr>
+               <tr><td> <label> How helpful was this review?</td></label>
+           <td><select name="rateReview">
                 <option value="0">Required Field</option>
                 <option value="1">Not Helpful</option>
                 <option value="2">Sort of Helpful</option>
-                <option value="3">Really Helpful</option>
+                <option value="3">Really Helpful</option></td></tr>
             </select>
-            <br>
-            <button type="submit">Submit</button>
+           <tr><td></td><td><button type="submit">Submit</button></td></tr>
         </form>
+    </table>
+    <table>
+        <form action=""></form>
 
-
+    </table>
+    
         <% } %>
 
 
-            <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
