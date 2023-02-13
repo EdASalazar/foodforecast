@@ -2,44 +2,43 @@
     <section id="add-review">
         <form action="/reviews" method="POST" id="form-review">
 
-            <label>Vendor
+            <label>Vendor</label>
                 <input type="text" name="vendor">
-            </label>
+            
 
-            <label>Rating
+            <label>Rating</label>
                 <select name="rating">
-                    <option value="0">-</option>
+                    <option value="0">Required Field</option>
                     <option value="1">Skip It!</option>
                     <option value="2">I mean you're here and you're drunk!</option>
                     <option value="3">Sure why not?</option>
                     <option value="4">It's only a little out of the way!</option>
                     <option value="5">Plan a road trip!</option>
                 </select>
-            </label>
-            <label>Rating
+            <label>Rating</label>
                 <select name="price">
-                    <option value="0">-</option>
+                    <option value="0">Required Field</option>
                     <option value="1">Less than $5 per person</option>
                     <option value="2">$5 - $10 per person</option>
                     <option value="3">$10-$15 per person</option>
                     <option value="4">$15-$20 per person</option>
                     <option value="5">$20 and up</option>
                 </select>
-                <br>
-                <label>Tells how you really feel: <br>
-                    <textarea name="feedback" id="feedback" cols="25" rows="6" placeholder="Description" required>
+                <label>Tells how you really feel: </label>
+                    <textarea name="feedback" id="feedback" cols="25" rows="3" placeholder="Description" required>
                     </textarea>
-                </label>
+                
                 <br>
-            </label>
+
              <h4>Add Image:</h4>
-            <label>Description: 
-                <textarea name="imgDesc" id="imgDesc" cols="25" rows="1" placeholder="Description" required>
+            <label>Description:</label>
+                <textarea name="imgDesc" id="imgDesc" cols="25" rows="1">
                 </textarea>
-            </label>
-            <label>Image
+                <br>
+            <label>Upload Image:</label>
+            <br>
                 <input id="vendorImg" type="file" name="vendorImg">
-            </label>
+            <br>
             <button type="submit">Submit Review</button>
         </form>
     </section>
