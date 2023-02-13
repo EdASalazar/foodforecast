@@ -9,11 +9,11 @@
                 <th>Rating</th>
                 <th>Price</th>
                 <th>Story</th>
-                <th>time stamps</th>
+                <th>Created</th>
+            <% if (user?._id.equals(review.user)) { %>
                 <th>Edit</th>
                 <th>Delete</th>
-
-
+            <% } %>
         </thead>
         <tbody>
             <tr>
@@ -51,6 +51,13 @@
     </table>
 
     <table id="add-comment">
+        <thead>
+            <tr>
+                <th>Feedback</th>
+                <th>Helpfulness</th>
+                <th>Author</th>
+            </tr>
+        </thead>
             <% comment.forEach(function(c)  { %> 
                <tr><td> <%= c.feedback %> </td>
                 <td> <%= c.rateReview %> </td>
