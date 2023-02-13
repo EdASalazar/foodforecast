@@ -10,13 +10,13 @@ router.get('/', reviewsCtrl.index);
 router.post('/', ensureLoggedIn, reviewsCtrl.create);
 // GET /reviews/new 
 router.get('/new', ensureLoggedIn, reviewsCtrl.new);
+// POST /reviews/:id/favorite
+router.post('/:id/favorites', reviewsCtrl.favorites);
 // GET /reviews/:id show
 router.get('/:id', reviewsCtrl.show);
 // DELETE /reviews/:id/delete 
 router.delete('/:id', reviewsCtrl.delete);
 // GET /reviews/:id/edit
 router.get('/:id/edit', reviewsCtrl.edit)
-// POST /reviews/:id/favorite
-
 
 module.exports = router;

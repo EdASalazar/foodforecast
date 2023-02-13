@@ -9,6 +9,16 @@ module.exports = {
     create,
     delete: deleteReview,
     edit,
+    favorites,
+}
+
+function favorites(req, res) {
+    Review.findById(req.params.id)
+    .then(function(review) {
+        req.body.userFaved = req.user._id;
+        console.log(review);
+        res.redirect(`/reviews/${req.params.id}`)
+    });
 }
 
 function edit(req, res) {

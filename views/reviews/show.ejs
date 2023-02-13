@@ -41,7 +41,7 @@
         </tbody>
     </table>
 
-    <table id="add-comment">
+    <table id="table-show-comments">
         <thead>
             <tr>
                 <th>Feedback</th>
@@ -58,7 +58,7 @@
     </table>
     <% if (user) { %>
     <h2>Add Comments</h2>
-    <table>
+    <table id="table-add-comment">
         <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
             <tr><td>What's on your mind?</td>
                <td><textarea name="feedback" rows=1></textarea></td></tr>
@@ -72,8 +72,15 @@
            <tr><td></td><td><button type="submit">Submit</button></td></tr>
         </form>
     </table>
-    <table>
-        <form action=""></form>
+    <table id="table-add-favorite">
+        <tr>
+        <td>Smash that fave button!</td>
+         <td>  
+        <form action="/reviews/<%= review.id %>/favorites" method="POST">
+            <button type="submit">Fave!</button>
+        </form>
+        </td>
+        </tr>
 
     </table>
     
