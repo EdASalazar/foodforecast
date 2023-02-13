@@ -37,10 +37,10 @@ const reviewSchema = new Schema({
         ref: 'User',
         required: true,
     },
-    userFaved: {
+    favedByUsers: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
-    },
+    }],
     dateCreated: {
         type: Date,
     },

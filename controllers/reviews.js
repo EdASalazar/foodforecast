@@ -13,9 +13,12 @@ module.exports = {
 }
 
 function favorites(req, res) {
- 
-        res.redirect(`/reviews/${req.params.id}`)
-
+    Review.findById(req.params.id, function(err, review) {
+        review.favedByUsers.push(req.user._id);
+        review.save(function(err) {
+            res.redirect(`/reviews/${req.params.id}`);
+        });
+    });
 }
 
 function edit(req, res) {
