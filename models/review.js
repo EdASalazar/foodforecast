@@ -28,11 +28,16 @@ const reviewSchema = new Schema({
     vendorImg: { 
         type: String,
     },
-    comment: {
+    comment: [{
         type: Schema.Types.ObjectId,
         ref: 'Comment',
-    },
+    }],
     user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
+    userFaved: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true,

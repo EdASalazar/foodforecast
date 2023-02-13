@@ -16,6 +16,11 @@ const review = require('./review');
     ref: 'Review',
     required: true,
   }],
+   faves: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Review',
+    required: true,
+  }],
  }, {
    timestamps: true
  });
