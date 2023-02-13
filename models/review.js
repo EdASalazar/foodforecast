@@ -3,16 +3,30 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    vendor: String,
-    blog: String,
-    rating: Number,
-    price: Number,
+    vendor: {
+        type: String,
+        required: true,
+    },
+    blog: {
+        type: String,
+        maxLength: 1000,
+    },
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        required: true,
+    },
+    price: {
+        type: Number,
+        min: 1,
+        max: 5,
+    },
     userName: String,
     userAvatar: String,
+    imgDesc: String,
     vendorImg: { 
-        data: Buffer,
-        contentType: String
-
+        type: String,
     },
     comment: {
         type: Schema.Types.ObjectId,

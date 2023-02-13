@@ -7,14 +7,38 @@
             </label>
 
             <label>Rating
-                <input type="number" name="rating">
+                <select name="rating">
+                    <option value="0">-</option>
+                    <option value="1">Skip It!</option>
+                    <option value="2">I mean you're here and you're drunk!</option>
+                    <option value="3">Sure why not?</option>
+                    <option value="4">It's only a little out of the way!</option>
+                    <option value="5">Plan a road trip!</option>
+                </select>
             </label>
-
-            <label>Price
-                <input type="number" name="price">
+            <label>Rating
+                <select name="price">
+                    <option value="0">-</option>
+                    <option value="1">Less than $5 per person</option>
+                    <option value="2">$5 - $10 per person</option>
+                    <option value="3">$10-$15 per person</option>
+                    <option value="4">$15-$20 per person</option>
+                    <option value="5">$20 and up</option>
+                </select>
+                <br>
+                <label>Tells how you really feel: <br>
+                    <textarea name="feedback" id="feedback" cols="25" rows="6" placeholder="Description" required>
+                    </textarea>
+                </label>
+                <br>
+            </label>
+             <h4>Add Image:</h4>
+            <label>Description: 
+                <textarea name="imgDesc" id="imgDesc" cols="25" rows="1" placeholder="Description" required>
+                </textarea>
             </label>
             <label>Image
-                <input type="file" name="vendorImg">
+                <input id="vendorImg" type="file" name="vendorImg">
             </label>
             <button type="submit">Submit Review</button>
         </form>
