@@ -73,6 +73,13 @@ nav > a.active {
   border-radius: 50%;
 }
 
+#vendor-image {
+  width: 100px;
+  object-fit: contain;
+  margin-right: auto;
+  margin-left: 20px;
+}
+
 table {
   font-size: 20px;
 }

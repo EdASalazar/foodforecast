@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     vendor: {
         type: String,
-        required: true,
+        // required: true,
     },
     blog: {
         type: String,
@@ -15,7 +15,7 @@ const reviewSchema = new Schema({
         type: Number,
         min: 1,
         max: 5,
-        required: true,
+        // required: true,
     },
     price: {
         type: Number,
@@ -40,7 +40,6 @@ const reviewSchema = new Schema({
     userFaved: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
     },
     dateCreated: {
         type: Date,
