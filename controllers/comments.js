@@ -12,7 +12,7 @@ function create(req, res) {
     req.body.review = req.params.id;
     const comment = new Comment(req.body);
         comment.save(function(err) {
-            if (err) return res.redirect('/reviews/index');
+            if (err) return res.redirect(`/reviews/${req.params.id}`);
             res.redirect(`/reviews/${req.params.id}`);
 
         });

@@ -52,24 +52,26 @@
 
     <table id="add-comment">
             <% comment.forEach(function(c)  { %> 
-               <tr><td> Words: <%= c.feedback %> </td>
-                <td> #: <%= c.rateReview %> </td>
-                <td> Name: <%= c.userName %> </td></tr>
+               <tr><td> <%= c.feedback %> </td>
+                <td> <%= c.rateReview %> </td>
+                <td> <%= c.userName %> </td></tr>
             <% }); %>
           
     </table>
     <% if (user) { %>
         <h2>Add Comments</h2>
         <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
-            <label for="comment-feedback">What's on your mind?
-                <textarea name="feedback"></textarea>
-            </label>
+            <label>What's on your mind?</label>
+                <textarea name="feedback" rows=1></textarea><br>
+            <label> How helpful was this review?</label>
+            <select name="rateReview">
+                <option value="0">Required Field</option>
+                <option value="1">Not Helpful</option>
+                <option value="2">Sort of Helpful</option>
+                <option value="3">Really Helpful</option>
+            </select>
             <br>
-            <label> How helpful was this review?
-                <input type="number" name="rateReview"></input>
-            </label> 
-            <br>
-            <button type="submit">Let Everyone Know</button>
+            <button type="submit">Submit</button>
         </form>
 
 
