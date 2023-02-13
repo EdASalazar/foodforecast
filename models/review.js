@@ -37,6 +37,9 @@ const reviewSchema = new Schema({
         ref: 'User',
         required: true,
     },
+    dateCreated: {
+        type: Date,
+    },
 }, {
     timestamps: true
 });

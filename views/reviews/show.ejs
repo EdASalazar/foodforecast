@@ -19,22 +19,12 @@
             <tr>
 
                 <td><%= review.vendorImg %></td>
-                <td>
-                    <%= review.userName %>
-                </td>
-                <td>
-                    <%= review.vendor %>
-                </td>
-                <td>
-                    <%= review.rating %>
-                </td>
-                <td>
-                    <%= review.price %>
-                </td>
-                <td>
-                    <%= review.blog %>
-                </td>
-                <td></td>
+                <td> <%= review.userName %> </td>
+                <td><%= review.vendor %></td>
+                <td> <%= review.rating %></td>
+                <td> <%= review.price %></td>
+                <td> <%= review.blog %></td>
+                <td><%= review.createdAt %></td>
 
                 <% if (user?._id.equals(review.user)) { %>
                     <td>
