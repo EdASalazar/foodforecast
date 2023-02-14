@@ -14,7 +14,6 @@ module.exports = {
     edit,
     favorites,
     showFavorites,
-    newVendor,
 }
 function newVendor(req, res) {
     req.body.user = req.user._id;
