@@ -59,8 +59,6 @@ function create(req, res) {
 }
 
 
-
-
 function index(req, res) {
      Review.find({}, function (err, reviews) {
         User.find({}, function (err, users) {
