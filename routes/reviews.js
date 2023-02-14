@@ -20,5 +20,7 @@ router.get('/:id', reviewsCtrl.show);
 router.delete('/:id', ensureLoggedIn, reviewsCtrl.delete);
 // GET /reviews/:id/edit
 router.get('/:id/edit', ensureLoggedIn, reviewsCtrl.edit)
+// get reveiws/vendors/new
+router.get('/vendors/new', reviewsCtrl.newVendor);
 
 module.exports = router;

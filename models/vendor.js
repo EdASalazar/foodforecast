@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const vendorSchema = new Schema({
     name: String,
-    address: String,
+    streetAddress: String,
+    state: String,
+    city: String,
+    zipcode: Number,
     avgRating: Number,
     website: String,
     phoneNumber: Number,
