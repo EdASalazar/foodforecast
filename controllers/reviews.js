@@ -15,20 +15,15 @@ module.exports = {
 
 function showFavorites(req, res) {
     const userId = req.user._id;
-    console.log(userId);
-   Review.find({favedByUsers: userId}, function(err, reviews) {
-    //(user?._id.equals(review.user))
-    console.log(reviews);
-    // let reviews = allReviews.favedByUsers.include(user._id);
-    //    console.log(reviews);
-    res.render('reviews/favorites', {title: 'Faves', reviews });
-});
+    Review.find({ favedByUsers: userId }, function (err, reviews) {
+        res.render('reviews/favorites', { title: 'Faves', reviews });
+    });
 }
 
 function favorites(req, res) {
-    Review.findById(req.params.id, function(err, review) {
+    Review.findById(req.params.id, function (err, review) {
         review.favedByUsers.push(req.user._id);
-        review.save(function(err) {
+        review.save(function (err) {
             res.redirect(`/reviews/${req.params.id}`);
         });
     });
