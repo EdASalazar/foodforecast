@@ -118,5 +118,5 @@ table td {
 /* Set the size of the div element that contains the map */
 #map {
   height: 400px; 
-  width: 100%; 
+  width: 50%; 
  }
