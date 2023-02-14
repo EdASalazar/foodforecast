@@ -1,6 +1,7 @@
 const Review = require('../models/review');
 const User = require('../models/user');
 const Comment = require('../models/comment');
+const Vendor = require('../models/vendor');
 
 module.exports = {
     index,

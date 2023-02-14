@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema({
+const vendorSchema = new Schema({
     name: String,
     address: String,
     avgRating: Number,
