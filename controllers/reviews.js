@@ -3,7 +3,7 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const Vendor = require('../models/vendor');
 const { $where } = require('../models/review');
-
+const {Client} = require("@googlemaps/google-maps-services-js");
 
 module.exports = {
     index,
@@ -62,28 +62,14 @@ function create(req, res) {
 
 
 function index(req, res) {
-    // initMap();
-    Review.find({}, function (err, reviews) {
+     Review.find({}, function (err, reviews) {
         User.find({}, function (err, users) {
             res.render('reviews/index', { title: 'Reviews', reviews, users })
         });
     });
 }
 
-// function initMap() {
-//     // The location of Uluru
-//     const uluru = { lat: -25.344, lng: 131.031 };
-//     // The map, centered at Uluru
-//     const map = new google.maps.Map(document.getElementById("map"), {
-//       zoom: 4,
-//       center: uluru,
-//     });
-//     // The marker, positioned at Uluru
-//     const marker = new google.maps.Marker({
-//       position: uluru,
-//       map: map,
-//     });
-//   }
+
 
 function show(req, res) {
     Review.findById(req.params.id, function (err, review) {
