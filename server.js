@@ -12,9 +12,10 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
 var reviewsRouter = require('./routes/reviews');
 var commentsRouter = require('./routes/comments');
+
 
 var app = express();
 
@@ -44,7 +45,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 app.use('/reviews', reviewsRouter);
 app.use('/', commentsRouter);
 

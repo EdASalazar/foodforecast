@@ -18,5 +18,7 @@ router.get('/:id', reviewsCtrl.show);
 router.delete('/:id', ensureLoggedIn, reviewsCtrl.delete);
 // GET /reviews/:id/edit
 router.get('/:id/edit', ensureLoggedIn, reviewsCtrl.edit)
+// GET /reviews/favorites
+router.get('/favorites', reviewsCtrl.showFavorites);
 
 module.exports = router;

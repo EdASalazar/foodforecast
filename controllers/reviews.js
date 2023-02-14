@@ -10,6 +10,11 @@ module.exports = {
     delete: deleteReview,
     edit,
     favorites,
+    showFavorites,
+}
+
+function showFavorites() {
+ 
 }
 
 function favorites(req, res) {
