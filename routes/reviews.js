@@ -10,7 +10,9 @@ router.get('/', reviewsCtrl.index);
 router.post('/', ensureLoggedIn, reviewsCtrl.create);
 // GET /reviews/new 
 router.get('/new', ensureLoggedIn, reviewsCtrl.new);
-// POST /reviews/:id/favorite
+// GET /reviews/favorites
+router.get('/favorites', reviewsCtrl.showFavorites);
+// POST /reviews/:id/favorites
 router.post('/:id/favorites', ensureLoggedIn, reviewsCtrl.favorites);
 // GET /reviews/:id show
 router.get('/:id', reviewsCtrl.show);
@@ -18,7 +20,5 @@ router.get('/:id', reviewsCtrl.show);
 router.delete('/:id', ensureLoggedIn, reviewsCtrl.delete);
 // GET /reviews/:id/edit
 router.get('/:id/edit', ensureLoggedIn, reviewsCtrl.edit)
-// GET /reviews/favorites
-router.get('/favorites', reviewsCtrl.showFavorites);
 
 module.exports = router;

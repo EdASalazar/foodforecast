@@ -13,8 +13,8 @@ module.exports = {
     showFavorites,
 }
 
-function showFavorites() {
- 
+function showFavorites(req, res) {
+    res.redirect('/reviews/favorites');
 }
 
 function favorites(req, res) {
