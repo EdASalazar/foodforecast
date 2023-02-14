@@ -14,7 +14,7 @@ module.exports = {
 }
 
 function showFavorites(req, res) {
-    res.redirect('/reviews/favorites');
+    res.render('/reviews/favorites');
 }
 
 function favorites(req, res) {
