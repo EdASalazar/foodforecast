@@ -1,4 +1,26 @@
 <%- include('../partials/header') %>
-
+<table id="favorite-reviews">
+    <thead>
+        <tr>
+            <th>Vendor</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>More Info</th>
+            
+    </thead>
+    <tbody>
+        <% reviews.forEach(function(r) { %>
+           <tr> 
+            <td><%= r.vendor %></td>
+            <td><%= r.rating %></td>
+            <td><%= r.price %></td>
+            <td><%= r.userName %></td>
+            <td><a href="/reviews/<%= r._id %>">Details</a></td>
+           </tr> 
+            
+       <% }); %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>

@@ -14,7 +14,15 @@ module.exports = {
 }
 
 function showFavorites(req, res) {
-    res.render('reviews/favorites', {title: 'Faves',});
+    const userId = req.user._id;
+    console.log(userId);
+   Review.find({favedByUsers: userId}, function(err, reviews) {
+    //(user?._id.equals(review.user))
+    console.log(reviews);
+    // let reviews = allReviews.favedByUsers.include(user._id);
+    //    console.log(reviews);
+    res.render('reviews/favorites', {title: 'Faves', reviews });
+});
 }
 
 function favorites(req, res) {
