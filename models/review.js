@@ -7,6 +7,7 @@ const reviewSchema = new Schema({
         type: String,
         // required: true,
     },
+    vendorLocation: String,
     blog: {
         type: String,
         maxLength: 1000,
