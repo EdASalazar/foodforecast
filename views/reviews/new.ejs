@@ -6,8 +6,8 @@
                 <td><select name="vendor">
                     <option value="">Select A Vendor</option>
                      <%- vendors.map(v => 
-                     `<option value="%{v.id}">${v.name}  ${v.streetAddress} ${v.state}</option>`
-                     
+                     `<option value="%{v._id}">${v.name} - ${v.streetAddress}, ${v.state}</option>`
+                    
                      ).join('') %>
                 </select> 
                 </td></tr>
