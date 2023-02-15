@@ -4,7 +4,10 @@ const review = require('./review');
 const Schema = mongoose.Schema;
 
 const vendorSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+    },
     streetAddress: {
         type: String,
         default: '123 Street Ave',

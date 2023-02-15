@@ -7,7 +7,7 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
   </head>
-  <body>r
+  <body>
    
     <nav>
       <a href="/"><img src="/images/foodcart-logo.png" alt="foodcart-logo" id="foodcart-logo"></a>
@@ -21,9 +21,9 @@
       |
         <img alt="avatar" id="nav-avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ><%= user.name %>
       |
-        <a href="/logout">LOG OUT</a>
+        <a href="/logout">Log Out</a>
       <% } else { %> 
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google-logo"></a>
+      <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google-logo"></a>
         <% } %>
     </nav>
     <main>

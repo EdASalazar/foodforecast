@@ -81,6 +81,8 @@ function show(req, res) {
 
 
 function newReview(req, res) {
-    res.render('reviews/new', { title: 'Add Review', })
+    Vendor.find({}, function(err, vendors) {
+    res.render('reviews/new', { title: 'Add Review', vendors });
+    });
 }
 
