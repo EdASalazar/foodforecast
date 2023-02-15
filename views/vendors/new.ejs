@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
     <section id="add-vendor">
         <table>
-            <tr>
+            <form action="/vendors/add" method="POST">
+                <tr>
                 <td><label>Name:</label></td>
                 <td><input type="text" name="name"></input></td>
             </tr>
@@ -27,6 +28,8 @@
             </tr>
             <tr><td></td>
                 <td><button type="submit">Add Vendor</button></td></tr>
+            </form>
+                 
         </table>
     </section>
 

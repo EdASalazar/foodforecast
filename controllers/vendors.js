@@ -1,4 +1,5 @@
 const Vendor = require('../models/vendor');
+const User = require('../models/user');
 
 module.exports = {
     index,
@@ -21,11 +22,11 @@ function newVendor(req, res) {
    
 
 function create(req, res) {
-    req.body.user = req.user._id;
-    req.body.userName = req.user.name;
+    const userId = req.user._id;
+    req.body.user = userId;
     const vendor = new Vendor(req.body);
     vendor.save(function (err) {
-        if (err) return res.redirect('vendors/new');
+        if (err) return res.redirect('/vendors/new');
         res.redirect('/vendors');
     });
 }

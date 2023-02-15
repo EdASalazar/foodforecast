@@ -14,4 +14,6 @@ router.get('/vendors', vendorsCtrl.index);
 router.get('/vendors/new', vendorsCtrl.new);
 //vendor/:id show
 
+//vendor vendor/create
+router.post('/vendors/add', vendorsCtrl.create)
 module.exports = router;

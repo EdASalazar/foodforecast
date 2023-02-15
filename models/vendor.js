@@ -5,13 +5,22 @@ const Schema = mongoose.Schema;
 
 const vendorSchema = new Schema({
     name: String,
-    streetAddress: String,
-    state: String,
-    city: String,
-    state: {type: String,
-        maxLength: 2,
+    streetAddress: {
+        type: String,
+        default: '123 Street Ave',
     },
-    zipcode: Number,
+    city: {
+        type: String,
+        default:'Los Angeles',
+    },
+    state: {
+        type: String,
+        default: 'CA',
+    },
+    zipcode: {
+        type: Number,
+        default: 12234,
+    },
     avgRating: Number,
     website: String,
     phoneNumber: Number,
