@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const vendor = require('./vendor');
+
 // Shorcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
