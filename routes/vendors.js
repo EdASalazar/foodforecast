@@ -8,8 +8,10 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // get /vendors
 router.get('/vendors', vendorsCtrl.index);
-//post /vendors/new
+// get /vendors/:id show
 
+//post /vendors/new
+router.get('/vendors/new', vendorsCtrl.new);
 //vendor/:id show
 
 module.exports = router;

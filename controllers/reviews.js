@@ -15,16 +15,7 @@ module.exports = {
     favorites,
     showFavorites,
 }
-function newVendor(req, res) {
-    req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
-    const vendor = new Vendor(req.body);
-    vendor.save(function (err) {
-        if (err) return res.redirect('reviews/new');
-        res.redirect('/reviews');
-    });
-}
+
 
 function showFavorites(req, res) {
     const userId = req.user._id;
