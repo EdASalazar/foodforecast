@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const review = require('./review');
 
 const Schema = mongoose.Schema;
 
@@ -13,6 +14,16 @@ const vendorSchema = new Schema({
     phoneNumber: Number,
     // This will be an enum
     venueType: String,
+    reviews: [{
+        type: Schema.Types.ObjectId,
+        ref: 'review',
+    }],
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'user',
+    },
+}, {
+    timestamps: true
 });
 
 
