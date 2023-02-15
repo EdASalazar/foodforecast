@@ -21,7 +21,11 @@ const vendorSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'review',
     }],
-    author: {
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'user',
+    },
+    userName: {
         type: Schema.Types.ObjectId,
         ref: 'user',
     },
