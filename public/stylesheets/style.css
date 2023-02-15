@@ -35,7 +35,7 @@ a {
 
 body > nav {
   grid-area: nav;
-  background-color: rgba(44, 89, 149, .9);
+  background-color: rgba(44, 89, 149, .6);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -56,8 +56,7 @@ nav > a {
 
 nav > a:hover:not(.active) {
   color: #00B7FF;
-  background-color: #424748;
-  
+  background-color: rgba(66, 71, 72, .6);
 }
 
 nav > a.active {
@@ -94,13 +93,13 @@ table {
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
-  background-color: #5f5f5f;
+  background-color: rgba(95, 95, 95, .6);
   color: white;
 }
 table td {
   padding: 5px;
   text-align: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .85);
   border: solid lightgray .25px;
   
 }
@@ -109,11 +108,11 @@ table td {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: auto;
-  padding: 2px;
-  
+  padding: 0;
 }
 
-#form-review >label {
+
+#form-review > label {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,3 +130,4 @@ table td {
   height: 400px; 
   width: 50%; 
  }
+
