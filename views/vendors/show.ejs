@@ -1,5 +1,21 @@
 <%- include('../partials/header') %>
-<p>Vendor Details</p>
+<table id="details-vendors">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        </tr>
+    </thead>
+        <tr>
+            <td><%= vendor.name %></td>
+            <td><%= vendor.streetAddress %></td>
+            <td><%= vendor.city %></td>
+            <td><%= vendor.state %></td>
+        </tr>
+</table>
+
 
 
 <%- include('../partials/footer') %>
