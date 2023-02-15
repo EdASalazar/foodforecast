@@ -11,9 +11,9 @@ router.get('/vendors', vendorsCtrl.index);
 // get /vendors/:id show
 
 //post /vendors/new
-router.get('/vendors/new', vendorsCtrl.new);
+router.get('/vendors/new', ensureLoggedIn, vendorsCtrl.new);
 //vendor/:id show
-
+//this is next
 //vendor vendor/create
-router.post('/vendors/add', vendorsCtrl.create)
+router.post('/vendors/add', ensureLoggedIn, vendorsCtrl.create)
 module.exports = router;

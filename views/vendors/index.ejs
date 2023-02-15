@@ -1,5 +1,30 @@
 <%- include('../partials/header') %>
 <p>Vendors</p>
+<table id="all-vendors">
+    <thead>
+        <tr>
+            <th>Vendor</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Author</th>
+            <th>More Info</th>
+            
+    </thead>
+    <tbody>
+        <% vendors.forEach(function(v) { %>
+           <tr> 
+            <td><%= v.name %></td>
+            <td><%= %></td>
+            <td><%=  %></td>
+            <td><%= %></td>
+            <td><a href="/vendors/<%= v._id %>">Details</a></td>
+           </tr> 
+            
+       <% }); %>
+    </tbody>
+</table>
+<br>
+
 <a href="/vendors/show">Details</a>
 <a href="/vendors/new">Add Vendor</a>
 <%- include('../partials/footer') %>
