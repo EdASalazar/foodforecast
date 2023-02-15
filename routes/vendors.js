@@ -13,7 +13,8 @@ router.get('/vendors', vendorsCtrl.index);
 //post /vendors/new
 router.get('/vendors/new', ensureLoggedIn, vendorsCtrl.new);
 //vendor/:id show
-//this is next
+router.get('/vendors/:id', vendorsCtrl.show);
 //vendor vendor/create
 router.post('/vendors/add', ensureLoggedIn, vendorsCtrl.create)
+
 module.exports = router;

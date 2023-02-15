@@ -4,7 +4,15 @@ const User = require('../models/user');
 module.exports = {
     index,
     create,
-    new: newVendor, 
+    new: newVendor,
+    show, 
+}
+
+function show(req, res) {
+    Vendor.findById(req.params.id, function(err, vendor) {
+        console.log(vendor)
+        res.render('vendors/show' , { title: 'Vendor Details' , vendor })
+    });
 }
 
 function index(req, res) {
