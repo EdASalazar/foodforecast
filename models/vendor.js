@@ -41,6 +41,9 @@ const vendorSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'user',
     },
+    Image: { 
+        type: String,
+    },
 }, {
     timestamps: true
 });

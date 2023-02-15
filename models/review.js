@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
     vendor: {
-        type: String,
-        // required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'vendor',
     },
     vendorLocation: String,
     blog: {

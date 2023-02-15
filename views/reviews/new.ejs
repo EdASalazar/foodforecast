@@ -1,9 +1,20 @@
 <%- include('../partials/header') %>
-    <section id="add-review">
-        <table>
+<section id="add-review">
+    <table>
         <form action="/reviews" method="POST" id="form-review">
             <tr><td><label>Vendor:</label>
-               <td><input type="text" name="vendor" placeholder="Required"> </td></tr>
+                <td><select name="vendor">
+                    <option value="">Select A Vendor</option>
+                     <%- vendors.map(v => 
+                     `<option value="%{v.id}">${v.name}  ${v.streetAddress} ${v.state}</option>`
+                     
+                     ).join('') %>
+                </select> 
+                </td></tr>
+                <tr>
+                    <td>Can't Find the Vendor</td>
+                    <td><a href="/vendors/new">Add Them Here</a></td>
+                </tr>
                 <tr><td><label>Rating:</label>
                     <td><select name="rating">
                     <option value="0">Required</option>
@@ -33,7 +44,10 @@
             <button type="submit">Submit Review</button>
         </form>
     </section>
-
+    <ul>
+        
+        </form>
+    </ul>
 
 
     <%- include('../partials/footer') %>
