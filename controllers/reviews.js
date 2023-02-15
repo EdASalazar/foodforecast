@@ -64,7 +64,9 @@ function create(req, res) {
 function index(req, res) {
      Review.find({}, function (err, reviews) {
         User.find({}, function (err, users) {
-            res.render('reviews/index', { title: 'Reviews', reviews, users })
+            Vendor.find({}, function (err, vendors) {
+            res.render('reviews/index', { title: 'Reviews', reviews, users , vendors })
+        });
         });
     });
 }

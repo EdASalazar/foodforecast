@@ -1,51 +1,61 @@
 <%- include('../partials/header') %>
-<section id="add-review">
-    <table>
-        <form action="/reviews" method="POST" id="form-review">
-            <tr><td><label>Vendor:</label>
-                <td><select name="vendor">
-                    <option value="">Select A Vendor</option>
-                     <%- vendors.map(v => 
-                     `<option value="%{v._id}">${v.name} - ${v.streetAddress}, ${v.state}</option>`
-                    
-                     ).join('') %>
-                </select> 
-                </td></tr>
+    <section id="add-review">
+        <table>
+            <form action="/reviews" method="POST" id="form-review">
+                <tr>
+                    <td><label>Vendor:</label>
+                    <td><select name="vendor">
+                            <!-- <option value="">Select A Vendor</option> -->
+                            <%- vendors.map(v =>
+                                `<option value="${v._id}">${v.name} - ${v.streetAddress}, ${v.state}</option>`
+
+                                ).join('') %>
+                        </select>
+                    </td>
+                </tr>
                 <tr>
                     <td>Can't Find the Vendor</td>
                     <td><a href="/vendors/new">Add Them Here</a></td>
                 </tr>
-                <tr><td><label>Rating:</label>
+                <tr>
+                    <td><label>Rating:</label>
                     <td><select name="rating">
-                    <option value="0">Required</option>
-                    <option value="1">Skip It!</option>
-                    <option value="2">I mean you're here and you're drunk!</option>
-                    <option value="3">Sure, why not?</option>
-                    <option value="4">It's only a little out of the way!</option>
-                    <option value="5">Plan a road trip!</option>
-                </select> </td></tr>
-                <tr><td><label>Price:</label>
+                            <option value="0">Required</option>
+                            <option value="1">Skip It!</option>
+                            <option value="2">I mean you're here and you're drunk!</option>
+                            <option value="3">Sure, why not?</option>
+                            <option value="4">It's only a little out of the way!</option>
+                            <option value="5">Plan a road trip!</option>
+                        </select> </td>
+                </tr>
+                <tr>
+                    <td><label>Price:</label>
                     <td><select name="price">
-                    <option value="0">Required</option>
-                    <option value="1">Less than $5 per person</option>
-                    <option value="2">$5 - $10 per person</option>
-                    <option value="3">$10-$15 per person</option>
-                    <option value="4">$15-$20 per person</option>
-                    <option value="5">$20 and up</option>
-                </select> </td></tr>
-                <tr><td><label>Tell us how you really feel: </label>
-                    <td><textarea name="blog" id="blog" cols="25" rows="3" placeholder="Required"></textarea>          
-                </td></tr>
-            </table>
-            <table>
-                <tr><td><label>Add Image:</label></td>
-                <td><input id="vendorImg" type="text" name="vendorImg" placeholder="Enter URL"></td></tr>
-            </table>
-            <button type="submit">Submit Review</button>
+                            <option value="0">Required</option>
+                            <option value="1">Less than $5 per person</option>
+                            <option value="2">$5 - $10 per person</option>
+                            <option value="3">$10-$15 per person</option>
+                            <option value="4">$15-$20 per person</option>
+                            <option value="5">$20 and up</option>
+                        </select> </td>
+                </tr>
+                <tr>
+                    <td><label>Tell us how you really feel: </label>
+                    <td><textarea name="blog" id="blog" cols="25" rows="3" placeholder="Required"></textarea>
+                    </td>
+                </tr>
+        </table>
+        <table>
+            <tr>
+                <td><label>Add Image:</label></td>
+                <td><input id="vendorImg" type="text" name="vendorImg" placeholder="Enter URL"></td>
+            </tr>
+        </table>
+        <button type="submit">Submit Review</button>
         </form>
     </section>
     <ul>
-        
+
         </form>
     </ul>
 
