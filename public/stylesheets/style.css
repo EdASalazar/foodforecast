@@ -44,8 +44,6 @@ body > nav {
   font-size: 15px;
 }
 
-
-
 nav > a {
   margin: 20px;
   text-decoration: none;
@@ -97,27 +95,13 @@ table thead th {
   color: white;
 }
 table td {
-  padding: 5px;
+  padding: 3px;
   text-align: center;
   background-color: rgba(255, 255, 255, .85);
   border: solid lightgray .25px;
   
 }
 
-#add-review > form {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto;
-  padding: 0;
-}
-
-
-#form-review > label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-}
 
 #nav-avatar {
   border-radius: 50%;
