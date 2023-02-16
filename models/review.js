@@ -10,26 +10,30 @@ const reviewSchema = new Schema({
     vendor: {
         type: Schema.Types.ObjectId,
         ref: 'Vendor',
+        required: true,
     },
     blog: {
         type: String,
+        required: true,
     },
     rating: {
         type: Number,
         min: 1,
         max: 5,
-        // required: true,
+        required: true,
     },
     price: {
         type: Number,
         min: 1,
         max: 5,
+        required: true,
     },
     userName: String,
     userAvatar: String,
     imgDesc: String,
     vendorImg: { 
         type: String,
+        enum: ['Mobile Cart', 'Mobile Vehicle', 'Tent and Table', 'Pop-Up']
     },
     comment: [{
         type: Schema.Types.ObjectId,
