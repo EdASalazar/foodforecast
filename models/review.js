@@ -13,7 +13,6 @@ const reviewSchema = new Schema({
     },
     blog: {
         type: String,
-        maxLength: 1000,
     },
     rating: {
         type: Number,

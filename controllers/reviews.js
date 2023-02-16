@@ -43,19 +43,20 @@ async function edit(req, res) {
     try {
         const review = await Review.findById(req.params.id)
         .populate("vendor").populate("user").exec();
-        res.render('reviews/edit', { title: 'Review Details', review });
+        res.render('reviews/edit', { title: 'Update Review', review });
     } catch (err) {
         console.log(err);
     }
 }
 
 function update(req, res) {
+    console.log(req.params.id);
     Review.findOneAndUpdate({_id: req.params.id},
         req.body,
         {new: true},
         function(err, review) {
             if (err|| !review) return res.redirect('/reviews');
-            res.redirect(`/reviews/${req.params.id}`);
+            res.redirect(`/reviews/${review._id}`);
             console.log(review);
         }
      );
