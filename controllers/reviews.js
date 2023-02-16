@@ -61,14 +61,13 @@ function create(req, res) {
 }
 
 
-function index(req, res) {
-     Review.find({}, function (err, reviews) {
-        User.find({}, function (err, users) {
-            Vendor.find({}, function (err, vendors) {
-            res.render('reviews/index', { title: 'Reviews', reviews, users , vendors })
-        });
-        });
-    });
+async function index(req, res) {
+    try {   
+        const reviews = await Review.find({}).populate("vendor").populate("user").exec() 
+        res.render('reviews/index', { title: 'Reviews', reviews });
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 

@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const vendor = require('./vendor');
 
+
 // Shorcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
     vendor: {
         type: Schema.Types.ObjectId,
-        ref: 'vendor',
+        ref: 'Vendor',
     },
     vendorName: String,
     vendorStreet: String,
