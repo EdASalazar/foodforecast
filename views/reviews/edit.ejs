@@ -28,8 +28,7 @@
                  <th>Edit</th>
                             <% } %>
             </thead>
-            <td><textarea name="blog" id="blog" cols="25" rows="3" placeholder="<%= review.blog %>"
-                            value="<%= review.blog %>"></textarea>
+            <td><textarea name="blog" id="blog" cols="25" rows="3" placeholder="<%= review.blog %>"></textarea>
                      </td>
                      <% if (user?._id.equals(review.user._id)) { %>
                         <td>

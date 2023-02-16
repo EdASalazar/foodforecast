@@ -5,6 +5,7 @@ const Vendor = require('../models/vendor');
 const { $where } = require('../models/review');
 const { Client } = require("@googlemaps/google-maps-services-js");
 const comment = require('../models/comment');
+const review = require('../models/review');
 
 module.exports = {
     index,
@@ -47,14 +48,15 @@ async function edit(req, res) {
 }
 
 function update(req, res) {
-    Review.findOneAndUpdate({_id: req.params.id,},
+    Review.findOneAndUpdate({_id: req.params.id},
         req.body,
         {new: true},
         function(err, review) {
-            if (err|| !review) return res.redirect('/revies');
+            if (err|| !review) return res.redirect('/reviews');
             res.redirect(`/reviews/${req.params.id}`);
+            console.log(review);
         }
-    );
+     );
 }
 
 
