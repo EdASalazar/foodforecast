@@ -2,8 +2,9 @@
 <table id="all-reviews">
     <thead>
         <tr>
-            <th></th>
+            
             <th>Vendor</th>
+            <th>Street</th>
             <th>Rating</th>
             <th>Price</th>
             <th>Author</th>
@@ -14,7 +15,7 @@
         <% reviews.forEach(function(r) { %>
            <tr> 
             <td><%= r.vendor.name %></td>
-            <td><%= r.vendorName %></td>
+            <td><%= r.vendor.streetAddress %></td>
             <td><%= r.rating %></td>
             <td><%= r.price %></td>
             <td><%= r.userName %></td>

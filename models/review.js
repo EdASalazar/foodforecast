@@ -10,8 +10,6 @@ const reviewSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Vendor',
     },
-    vendorName: String,
-    vendorStreet: String,
     blog: {
         type: String,
         maxLength: 1000,
