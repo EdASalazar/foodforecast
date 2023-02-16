@@ -31,6 +31,7 @@ function newVendor(req, res) {
    
 
 function create(req, res) {
+    const validStates = Review.schema.paty('')
     const userId = req.user._id;
     req.body.user = userId;
     const vendor = new Vendor(req.body);

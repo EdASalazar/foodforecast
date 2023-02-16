@@ -32,8 +32,7 @@ const reviewSchema = new Schema({
     userAvatar: String,
     imgDesc: String,
     vendorImg: { 
-        type: String,
-        enum: ['Mobile Cart', 'Mobile Vehicle', 'Tent and Table', 'Pop-Up']
+        type: String,   
     },
     comment: [{
         type: Schema.Types.ObjectId,

@@ -10,25 +10,32 @@ const vendorSchema = new Schema({
     },
     streetAddress: {
         type: String,
-        default: '123 Street Ave',
+        required: true,
     },
     city: {
         type: String,
-        default:'Los Angeles',
+        required: true,
     },
     state: {
         type: String,
-        default: 'CA',
+        enum: ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI',
+        'ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN',
+        'MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK',
+        'OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
+        required: true,
     },
     zipcode: {
         type: Number,
-        default: 12234,
+        required: true,
     },
     avgRating: Number,
     website: String,
     phoneNumber: Number,
     // This will be an enum
-    venueType: String,
+    venueType: {
+        type: String,
+        enum: ['Mobile Cart', 'Mobile Vehicle', 'Tent and Table', 'Pop-Up']
+    },
     reviews: [{
         type: Schema.Types.ObjectId,
         ref: 'review',

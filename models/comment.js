@@ -6,6 +6,7 @@ const commentSchema = new Schema({
     feedback: {
         type: String,
         maxLength: 200,
+        required: true,
     },
     rateReview: {
         type: Number,

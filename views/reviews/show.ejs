@@ -37,7 +37,7 @@
                         <th>Story</th>
                     </thead>
                     <tr>
-                        <td>
+                        <td><%- review.blog.replaceAll('\n', '<br>') %>
                             <%= review.blog %>
                         </td>
                     </tr>
@@ -58,6 +58,7 @@
                     <% comment.forEach(function(c) { %>
                         <tr>
                             <td>
+                                <td><%- c.feedback.replaceAll('\n', '<br>') %>
                                 <%= c.feedback %>
                             </td>
                             <td>
