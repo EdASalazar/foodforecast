@@ -3,40 +3,56 @@
     <table id="details-reviews">
         <thead>
             <tr>
-                <th><img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer"></th>
+                <th><img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer">
+                </th>
                 <th>Author</th>
                 <th>Vendor</th>
                 <th>Rating</th>
                 <th>Price</th>
-                <th>Story</th>
                 <th>Created</th>
-            <% if (user?._id.equals(review.user._id)) { %>
-                <th>Edit</th>
-                <th>Delete</th>
-            <% } %>
         </thead>
         <tbody>
             <tr>
 
                 <td><img src="<%= review.vendorImg %>" id="vendor-image"></td>
-                <td> <%= review.userName %> </td>
-                <td><%= review.vendor.name %></td>
-                <td> <%= review.rating %></td>
-                <td> <%= review.price %></td>
-                <td> <%= review.blog %></td>
-                <td><%= review.createdAt.toLocaleDateString() %></td>
-              
+                <td>
+                    <%= review.userName %>
+                </td>
+                <td>
+                    <%= review.vendor.name %>
+                </td>
+                <td>
+                    <%= review.rating %>
+                </td>
+                <td>
+                    <%= review.price %>
+                </td>
+                <td>
+                    <%= review.createdAt.toLocaleDateString() %>
+                </td>
 
-                <% if (user?._id.equals(review.user._id)) { %>
+                <table>
+                    <thead>
+                        <th>Story</th>
+                        <% if (user?._id.equals(review.user._id)) { %>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <% } %>
+                    </thead>
                     <td>
-                        <form action="/reviews/<%= review.id %>/edit" method="GET"><button type="submit">EDIT</button>
-                        </form>
+                        <%= review.blog %>
                     </td>
-                    <td>
-                        <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button
-                                type="submit">DELETE</button></form>
-                    </td>
-                    <% } %>
+                    <% if (user?._id.equals(review.user._id)) { %>
+                        <td>
+                            <form action="/reviews/<%= review.id %>/edit" method="GET"><button
+                                    type="submit">EDIT</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button
+                                    type="submit">DELETE</button></form>
+                        </td>
+                        <% } %>
             </tr>
         </tbody>
     </table>
@@ -47,14 +63,26 @@
                 <th>Feedback</th>
                 <th>Helpfulness</th>
                 <th>Author</th>
+                <th>Created</th>
             </tr>
         </thead>
-            <% comment.forEach(function(c)  { %> 
-               <tr><td> <%= c.feedback %> </td>
-                <td> <%= c.rateReview %> </td>
-                <td> <%= c.userName %> </td></tr>
+        <% comment.forEach(function(c) { %>
+            <tr>
+                <td>
+                    <%= c.feedback %>
+                </td>
+                <td>
+                    <%= c.rateReview %>
+                </td>
+                <td>
+                    <%= c.userName %>
+                </td>
+                <td>
+                    <%= c.createdAt.toLocaleDateString() %>
+                </td>
+            </tr>
             <% }); %>
-          
+
     </table>
     <% if (user) { %>
         <table id="table-add-comment">
@@ -62,32 +90,40 @@
                 <th>Add A Comment</th>
             </thead>
             <tbody>
-            <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
-            <tr><td>What's on your mind?</td>
-               <td><textarea name="feedback" rows=1></textarea></td></tr>
-               <tr><td> <label> How helpful was this review?</td></label>
-           <td><select name="rateReview">
-                <option value="0">Required Field</option>
-                <option value="1">Not Helpful</option>
-                <option value="2">Sort of Helpful</option>
-                <option value="3">Really Helpful</option></td></tr>
-            </select>
-           <tr><td></td><td><button type="submit">Submit</button></td></tr>
-        </form>
-    </tbody>
-    </table>
-    <table id="table-add-favorite">
-        <tr>
-        <td>Smash that fave button!</td>
-         <td>  
-        <form action="/reviews/<%= review.id %>/favorites" method="POST">
-            <button type="submit">Fave!</button>
-        </form>
-        </td>
-        </tr>
+                <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
+                    <tr>
+                        <td>What's on your mind?</td>
+                        <td><textarea name="feedback" rows=1></textarea></td>
+                    </tr>
+                    <tr>
+                        <td> <label> How helpful was this review?</td></label>
+                        <td><select name="rateReview">
+                                <option value="0">Required Field</option>
+                                <option value="1">Not Helpful</option>
+                                <option value="2">Sort of Helpful</option>
+                                <option value="3">Really Helpful</option>
+                        </td>
+                    </tr>
+                    </select>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit">Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+        <table id="table-add-favorite">
+            <tr>
+                <td>Smash that fave button!</td>
+                <td>
+                    <form action="/reviews/<%= review.id %>/favorites" method="POST">
+                        <button type="submit">Fave!</button>
+                    </form>
+                </td>
+            </tr>
 
-    </table>
-    
+        </table>
+
         <% } %>
 
-<%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>
