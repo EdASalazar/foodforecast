@@ -34,9 +34,14 @@ function favorites(req, res) {
     });
 }
 
-function edit(req, res) {
-    Review.findById(req.params.id);
-    res.render('reviews/edit', { title: 'Edit Your Review' });
+async function edit(req, res) {
+    try {
+        const review = await Review.findById(req.params.id)
+            .populate("vendor").populate("user").exec();
+            res.render('reviews/edit', { title: 'Review Details', review });
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function deleteReview(req, res) {
