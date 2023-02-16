@@ -136,3 +136,8 @@ table td {
   white-space: nowrap;
  }
 
+.table-buttons {
+  display: flex;
+  justify-content: left;
+  
+}
