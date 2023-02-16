@@ -18,10 +18,9 @@ const vendorSchema = new Schema({
     },
     state: {
         type: String,
-        enum: ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI',
-        'ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN',
-        'MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK',
-        'OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
+        enum: ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN', 'MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
+        minLength: 2,
+        maxLength: 2,
         required: true,
     },
     zipcode: {
@@ -31,10 +30,9 @@ const vendorSchema = new Schema({
     avgRating: Number,
     website: String,
     phoneNumber: Number,
-    // This will be an enum
     venueType: {
         type: String,
-        enum: ['Mobile Cart', 'Mobile Vehicle', 'Tent and Table', 'Pop-Up']
+        enum: ['Mobile Cart', 'Food Truck', 'Tent and Table', 'Pop-Up', 'Other']
     },
     reviews: [{
         type: Schema.Types.ObjectId,

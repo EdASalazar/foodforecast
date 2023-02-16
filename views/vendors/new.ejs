@@ -3,39 +3,55 @@
         <table>
             <form action="/vendors/add" method="POST">
                 <tr>
-                <td><label>Name:</label></td>
-                <td><input type="text" name="name"></input></td>
-            </tr>
-            <tr>
-                <td><label>Address:</label></td>
-                <td><input type="text" name="streetAddress"></input></td>
-            </tr>
-            <tr>
-                <td><label>City:</label></td>
-                <td><input type="text" name="city"></input></td>
-            </tr>
-            <tr>
-                <td><label>State:</label></td>
-                <td><input type="text" name="state"></input></td>
-            </tr>
-            <tr>
-                <td><label>Zip Code:</label></td>
-                <td><input type="number" name="zipcode"></td>
-            </tr>
-            <tr>
-                <td>Venue:</td>
-                <td><input type="text" name="venueType"></td>
-            </tr>
-            </td>
- 
-                <tr><td><label>Image:</label></td>
-                    <td><input type="text" name="image" placeholder="Enter URL"></td></tr>
-                    <td><button type="submit">Add</button></td></tr>
-                </table>
+                    <td><label>Name:</label></td>
+                    <td><input type="text" name="name"></input></td>
+                </tr>
+                <tr>
+                    <td><label>Address:</label></td>
+                    <td><input type="text" name="streetAddress"></input></td>
+                </tr>
+                <tr>
+                    <td><label>City:</label></td>
+                    <td><input type="text" name="city"></input></td>
+                </tr>
+                <tr>
+                    <td><label>State:</label></td>
+                    <td>
+                        <select name="state">
+                            <option value=""> - </option>
+                            <% validStates.forEach(function(state, idx) {%>
+                                <option value="<%= state %>" <% idx === 0 ? 'selected' : '' %>>
+                                    <%= state %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Zip Code:</label></td>
+                    <td><input type="number" name="zipcode"></td>
+                </tr>
+                <tr>
+                    <td>Venue:</td>
+                    <td> <select name="venueType">
+                            <option value="">-</option>
+                            <% validVenue.forEach(function(venue, idx) { %>
+                                <option value="<%= venue %>" <%= idx === 0 ? 'selected' : '' %>>
+                                    <%= venue %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </td>
+                </tr>
+                </td>
+
+                <tr>
+                    <td><label>Image:</label></td>
+                    <td><input type="text" name="image" placeholder="Enter URL"></td>
+                </tr>
+                <td><button type="submit">Add</button></td>
+                </tr>
+        </table>
         </form>
     </section>
-
-
-
-
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

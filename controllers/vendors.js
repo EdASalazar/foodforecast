@@ -26,12 +26,13 @@ function index(req, res) {
  
 
 function newVendor(req, res) {
-    res.render('vendors/new', { title: 'Add Vendor' })
+    const validStates = Vendor.schema.path('state').enumValues;
+    const validVenue = Vendor.schema.path('venueType').enumValues;
+    res.render('vendors/new', { title: 'Add Vendor', validStates , validVenue })
    }
    
 
 function create(req, res) {
-    const validStates = Review.schema.paty('')
     const userId = req.user._id;
     req.body.user = userId;
     const vendor = new Vendor(req.body);
