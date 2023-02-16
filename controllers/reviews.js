@@ -19,13 +19,15 @@ module.exports = {
     update
 }
 
-
-function showFavorites(req, res) {
-    const userId = req.user._id;
-    Review.find({ favedByUsers: userId }, function (err, reviews) {
+async function showFavorites(req, res) {
+    try {
+        const reviews = await Review.find({favedByUsers: req.user._id}).populate("vendor").populate("user").exec();
         res.render('reviews/favorites', { title: 'Faves', reviews });
-    });
+    } catch (err) {
+        console.log(err);
+    }
 }
+
 
 function favorites(req, res) {
     Review.findById(req.params.id, function (err, review) {
