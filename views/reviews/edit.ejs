@@ -1,11 +1,20 @@
 <%- include('../partials/header') %>
 
    
-
-<form action="/reviews/<%= review.id %>?_method=PUT" method="POST" id="form-edit">
-<textarea name="blog" id="blog" cols="25" rows="3" placeholder="<%= review.blog %>"></textarea> 
-<button type="submit">EDIT</button>
-</form>
+<table>
+    <form action="/reviews/<%= review.id %>?_method=PUT" method="POST" id="form-edit">
+    <tr>
+        <td><label>Update Story</label>
+        </td>
+        <td>
+<textarea name="blog" id="blog" cols="25" rows="2" placeholder="<%= review.blog %>"><%- review.blog %></textarea>
+        </td>
+    </tr> 
+    <tr>
+       <td class="button-td"><button type="submit">EDIT</button></td>
+    </tr>
+    </form>
+</table>
    
                
    
