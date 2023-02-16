@@ -75,7 +75,6 @@ async function show(req, res) {
     try {
         const review = await Review.findById(req.params.id)
             .populate("vendor").populate("user").exec();
-        console.log(comment);
         Comment.find({ review: review._id }, function (err, comment) {
             res.render('reviews/show', { title: 'Review Details', review, comment });
         });

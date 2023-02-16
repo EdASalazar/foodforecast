@@ -10,7 +10,7 @@
                 <th>Price</th>
                 <th>Story</th>
                 <th>Created</th>
-            <% if (user?._id.equals(review.user)) { %>
+            <% if (user?._id.equals(review.user._id)) { %>
                 <th>Edit</th>
                 <th>Delete</th>
             <% } %>
@@ -27,7 +27,7 @@
                 <td><%= review.createdAt.toLocaleDateString() %></td>
               
 
-                <% if (user?._id.equals(review.user)) { %>
+                <% if (user?._id.equals(review.user._id)) { %>
                     <td>
                         <form action="/reviews/<%= review.id %>/edit" method="GET"><button type="submit">EDIT</button>
                         </form>
