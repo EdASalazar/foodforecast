@@ -3,7 +3,7 @@
     <table id="details-reviews">
         <thead>
             <tr>
-                <th><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer"></th>
+                <th><img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer"></th>
                 <th>Author</th>
                 <th>Vendor</th>
                 <th>Rating</th>
@@ -20,11 +20,11 @@
 
                 <td><img src="<%= review.vendorImg %>" id="vendor-image"></td>
                 <td> <%= review.userName %> </td>
-                <td><%= review.vendor %></td>
+                <td><%= review.vendor.name %></td>
                 <td> <%= review.rating %></td>
                 <td> <%= review.price %></td>
                 <td> <%= review.blog %></td>
-                <td><%= review.createdAt %></td>
+                <td><%= review.createdAt.toLocaleDateString() %></td>
               
 
                 <% if (user?._id.equals(review.user)) { %>
@@ -57,9 +57,12 @@
           
     </table>
     <% if (user) { %>
-    <h2>Add Comments</h2>
-    <table id="table-add-comment">
-        <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
+        <table id="table-add-comment">
+            <thead>
+                <th>Add A Comment</th>
+            </thead>
+            <tbody>
+            <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
             <tr><td>What's on your mind?</td>
                <td><textarea name="feedback" rows=1></textarea></td></tr>
                <tr><td> <label> How helpful was this review?</td></label>
@@ -71,6 +74,7 @@
             </select>
            <tr><td></td><td><button type="submit">Submit</button></td></tr>
         </form>
+    </tbody>
     </table>
     <table id="table-add-favorite">
         <tr>

@@ -84,6 +84,10 @@ nav > a.active {
   margin-left: 20px;
 }
 
+#review-avatar {
+  width: 30px;
+}
+
 table {
   font-size: 15px;
 }

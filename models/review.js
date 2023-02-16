@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const vendor = require('./vendor');
-
+const comment = require('./comment');
+const user = require('./user');
 
 // Shorcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
@@ -38,7 +39,6 @@ const reviewSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
     },
     favedByUsers: [{
         type: Schema.Types.ObjectId,

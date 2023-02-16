@@ -3,7 +3,8 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const Vendor = require('../models/vendor');
 const { $where } = require('../models/review');
-const {Client} = require("@googlemaps/google-maps-services-js");
+const { Client } = require("@googlemaps/google-maps-services-js");
+const comment = require('../models/comment');
 
 module.exports = {
     index,
@@ -62,28 +63,31 @@ function create(req, res) {
 
 
 async function index(req, res) {
-    try {   
-        const reviews = await Review.find({}).populate("vendor").populate("user").exec() 
+    try {
+        const reviews = await Review.find({}).populate("vendor").populate("user").exec();
         res.render('reviews/index', { title: 'Reviews', reviews });
-    } catch(err) {
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function show(req, res) {
+    try {
+        const review = await Review.findById(req.params.id)
+            .populate("vendor").populate("user").exec();
+        console.log(comment);
+        Comment.find({ review: review._id }, function (err, comment) {
+            res.render('reviews/show', { title: 'Review Details', review, comment });
+        });
+    } catch (err) {
         console.log(err);
     }
 }
 
 
-
-function show(req, res) {
-    Review.findById(req.params.id, function (err, review) {
-        Comment.find({ review: review._id }, function (err, comment) {
-            res.render('reviews/show', { title: 'Review Details', review, comment });
-        });
-    });
-}
-
-
 function newReview(req, res) {
-    Vendor.find({}, function(err, vendors) {
-    res.render('reviews/new', { title: 'Add Review', vendors });
+    Vendor.find({}, function (err, vendors) {
+        res.render('reviews/new', { title: 'Add Review', vendors });
     });
 }
 
