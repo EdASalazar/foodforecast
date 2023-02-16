@@ -15,7 +15,7 @@
         <tbody>
             <tr>
 
-                <td><img src="<%= review.vendorImg %>" id="vendor-image"></td>
+                <td><img id='reviews-vendor-image' src="<%= review.vendorImg %>" id="vendor-image"></td>
                 <td>
                     <%= review.userName %>
                 </td>
@@ -36,11 +36,13 @@
                     <thead>
                         <th>Story</th>
                     </thead>
+                    <tbody id="blog">
                     <tr>
                         <td><%- review.blog.replaceAll('\n', '<br>') %>
                             <%= review.blog %>
                         </td>
                     </tr>
+                    </tbody>
                 </table>
 
 

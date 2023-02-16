@@ -13,6 +13,7 @@ body {
   grid-template-areas: 
     "nav"
     "main";
+
   }
   
   body > main {
@@ -98,7 +99,7 @@ table {
 table thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
-  background-color: rgba(95, 95, 95, .65);
+  background-color: rgba(95, 95, 95, .80);
   color: white;
 }
 table td {
@@ -116,28 +117,45 @@ table td {
   padding: 0 20px 0 1px;
 }
 
-/* Set the size of the div element that contains the map */
-#map {
-  height: 400px; 
-  width: 50%; 
- }
 
- .button-td {
+.button-td {
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
- }
+}
 
 
- table {
+table {
   width: 60%;
- }
+  
+}
 
- td, th {
+td, th {
   white-space: nowrap;
- }
+}
 
 .table-buttons {
   display: flex;
   justify-content: left;
   
 }
+
+#background {
+  background-color: rgba(255, 255, 255, .5);
+  height: 100%;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+#reviews-vendor-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px; 
+  width: 50%; 
+ }
