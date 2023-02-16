@@ -6,6 +6,7 @@ module.exports = {
     create,
     new: newVendor,
     show, 
+    
 }
 
 function show(req, res) {

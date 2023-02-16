@@ -20,6 +20,8 @@ router.get('/:id/edit', ensureLoggedIn, reviewsCtrl.edit)
 router.get('/:id', reviewsCtrl.show);
 // DELETE /reviews/:id/delete 
 router.delete('/:id', ensureLoggedIn, reviewsCtrl.delete);
+// EDIT PUT /reviews/:id
+router.put('/:id', ensureLoggedIn, reviewsCtrl.update);
 
 
 module.exports = router;

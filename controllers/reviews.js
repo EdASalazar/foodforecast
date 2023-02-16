@@ -15,6 +15,7 @@ module.exports = {
     edit,
     favorites,
     showFavorites,
+    update
 }
 
 
@@ -34,15 +35,28 @@ function favorites(req, res) {
     });
 }
 
+
 async function edit(req, res) {
     try {
         const review = await Review.findById(req.params.id)
-            .populate("vendor").populate("user").exec();
-            res.render('reviews/edit', { title: 'Review Details', review });
+        .populate("vendor").populate("user").exec();
+        res.render('reviews/edit', { title: 'Review Details', review });
     } catch (err) {
         console.log(err);
     }
 }
+
+function update(req, res) {
+    Review.findOneAndUpdate({_id: req.params.id,},
+        req.body,
+        {new: true},
+        function(err, review) {
+            if (err|| !review) return res.redirect('/revies');
+            res.redirect(`/reviews/${req.params.id}`);
+        }
+    );
+}
+
 
 function deleteReview(req, res) {
     Review.findById(req.params.id)

@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<table id="details-reviews">
+    <table id="details-reviews">
         <thead>
             <tr>
                 <th><img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer">
@@ -9,43 +9,36 @@
                 <th>Vendor</th>
                 <th>Rating</th>
                 <th>Price</th>
-              
+
         </thead>
         <tbody>
             <tr>
                 <td></td>
-                
-
-                <td>
-                    <%= review.vendor.name %>
-                </td>
-                <td>
-                    <%= review.rating %>
-                </td>
-                <td>
-                    <%= review.price %>
-                </td>
+                <td><%= review.vendor.name %></td>
+                <td><%= review.rating %></td>
+                <td><%= review.price %></td>
+            </tbody>
+        </table>
 
 
-                <table>
-                    <thead>
-                        <th>Story</th>
-                        <% if (user?._id.equals(review.user._id)) { %>
-                            <th>Edit</th>
+         <table>
+            <thead>
+                <th>Story</th>
+                <% if (user?._id.equals(review.user._id)) { %>
+                 <th>Edit</th>
                             <% } %>
-                    </thead>
-                    <td>
-                        <%= review.blog %>
-                    </td>
-                    <% if (user?._id.equals(review.user._id)) { %>
+            </thead>
+            <td><textarea name="blog" id="blog" cols="25" rows="3" placeholder="<%= review.blog %>"
+                            value="<%= review.blog %>"></textarea>
+                     </td>
+                     <% if (user?._id.equals(review.user._id)) { %>
                         <td>
-                            <form action="/reviews/<%= review.id %>" method="PUT"><button
-                                    type="submit">EDIT</button>
+                            <form action="/reviews/<%= review.id %>" method="PUT"><button type="submit">EDIT</button>
                             </form>
-                        </td>
-                        <% } %>
+                         </td>
+                <% } %>
             </tr>
         </tbody>
     </table>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
