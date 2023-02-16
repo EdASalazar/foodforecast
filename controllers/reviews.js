@@ -35,7 +35,8 @@ function favorites(req, res) {
 }
 
 function edit(req, res) {
-    res.redirect('/reviews');
+    Review.findById(req.params.id);
+    res.render('reviews/edit', { title: 'Edit Your Review' });
 }
 
 function deleteReview(req, res) {

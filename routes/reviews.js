@@ -14,12 +14,13 @@ router.get('/new', ensureLoggedIn, reviewsCtrl.new);
 router.get('/favorites', reviewsCtrl.showFavorites);
 // POST /reviews/:id/favorites
 router.post('/:id/favorites', ensureLoggedIn, reviewsCtrl.favorites);
+// GET /reviews/:id/edit
+router.get('/:id/edit', ensureLoggedIn, reviewsCtrl.edit)
 // GET /reviews/:id show
 router.get('/:id', reviewsCtrl.show);
 // DELETE /reviews/:id/delete 
 router.delete('/:id', ensureLoggedIn, reviewsCtrl.delete);
-// GET /reviews/:id/edit
-router.get('/:id/edit', ensureLoggedIn, reviewsCtrl.edit)
 
 
 module.exports = router;
+
