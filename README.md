@@ -34,6 +34,9 @@ Users can add food vendors to the database. They can review them. Look at what o
 
 ## Getting Started
 
+Website: [Food Forecast](https://food-forecast.herokuapp.com/)
+[Intial Design](https://trello.com/b/w4ajiiJn/project-2-food-forecast)
+
 Getting started is easy. Log in and look around. Find a vendor you want to try or post a reviews of one of your favorite street food vendors. 
 
 
@@ -41,7 +44,7 @@ Getting started is easy. Log in and look around. Find a vendor you want to try o
 
 The basis of the project was trying to bring together both the vendors and their customers into one place. Where customers can exchange reviews and look at other reviews. 
 
-![Intial Design](https://trello.com/b/w4ajiiJn/project-2-food-forecast)
+
 
 ## Future Developments
 
