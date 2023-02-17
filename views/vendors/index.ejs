@@ -20,11 +20,18 @@
            </tr> 
             
        <% }); %>
+    <tr><td class="button-td">
+        <form action="/vendors/new" method="GET">
+        <button type="submit">Add Vendor</button>
+        </form>
+    </td>
+    </tr>
+    </form>
     </tbody>
 </table>
 <br>
 
-<form action="/vendors/new" method="GET">
+<!-- <form action="/vendors/new" method="GET">
     <button type="submit">Add Vendor</button>
-</form>
+</form> -->
 <%- include('../partials/footer') %>

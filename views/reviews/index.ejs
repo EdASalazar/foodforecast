@@ -22,10 +22,12 @@
             <td><a href="/reviews/<%= r._id %>">Details</a></td>
            </tr> 
             
-       <% }); %>
+           <% }); %>
+           <tr><td class="button-td">
+           <a href="/reviews/favorites"><button>Favorites</button></a>
+           </td></tr>
     </tbody>
 </table>
-<br>
-<a href="/reviews/favorites"><button>See What You Like</button></a>
+
 
 <%- include('../partials/footer') %>
