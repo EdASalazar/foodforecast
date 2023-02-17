@@ -1,28 +1,12 @@
 <%- include('./partials/header') %>
+<h1>Why Street Food</h1>
+<p>I left my class one night trying to think about what I would want to spend time on. Finding a project that you have a passion for can make the hard work a little easier. A few minutes later I was buying tacos down the street from Tacos La Geura. 
 
-  <h3>Google Maps Demo</h3>
-  <!--The div element for the map -->
-  <div id="map"></div>
-
-  <!--Add a script by google -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=<Key>&callback=initMap&libraries=&v=weekly"
-    async>
-    </script>
-
-  <script>
-
-    function initMap() {
-      const losAngeles = {
-        lat: 34.0522,
-        lng: -118.2437
-      };
-      const map = new google.maps.Map(
-        document.getElementById("map"), {
-        zoom: 17.56,
-        center: losAngeles,
-      });
-    }
-  </script>
+  So I decided to do build something for people like myself. People who stop when they see 20 people huddled around a folding table and a grill on some random street. People who still get child like joy when they see an ice cream truck or hear the elote vendor coming down the street. (If you've never had elote please try it as soon as you can.)
+  
+  This website is a way for people passionate about non-tradition food venues to share their expereinces and suggestions. As it develops I want it people with a passion for street food togehter.
+  
+  Users can add food vendors to the database. They can review them. Look at what other people eating. Comment on their posts. 
+  </p>
 
   <%- include('./partials/footer') %>
