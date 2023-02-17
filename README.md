@@ -4,6 +4,7 @@
 ## Programmed by Edward Salazar
 [Linkdin](https://www.linkedin.com/in/edward-salazar-1744228b/)  
 Website: [Food Forecast](https://food-forecast.herokuapp.com/)
+Github: [Food Forecast](https://github.com/EdASalazar/foodforecast)
 
 ## Screenshots
 ![Review: List](https://i.imgur.com/J5x7Zfj.png)
@@ -30,6 +31,10 @@ So I decided to do build something for people like myself. People who stop when 
 This website is a way for people passionate about non-tradition food venues to share their expereinces and suggestions. As it develops I want it people with a passion for street food togehter.
 
 Users can add food vendors to the database. They can review them. Look at what other people eating. Comment on their posts. 
+
+## Getting Started
+
+Getting started is easy. Log in and look around. Find a vendor you want to try or post a reviews of one of your favorite street food vendors. 
 
 
 ## Project Planning
