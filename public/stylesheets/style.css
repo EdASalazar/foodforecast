@@ -13,7 +13,6 @@ body {
   grid-template-areas: 
     "nav"
     "main";
-
   }
   
   body > main {
@@ -63,7 +62,6 @@ nav > a.active {
   cursor: default;
 }
 
-
 #google-logo {
   width: 18px;
   object-fit: contain;
@@ -102,6 +100,7 @@ table thead th {
   background-color: rgba(95, 95, 95, .80);
   color: white;
 }
+
 table td {
   padding: 3px;
   text-align: center;
@@ -110,19 +109,16 @@ table td {
   
 }
 
-
 #nav-avatar {
   border-radius: 50%;
   object-fit: contain;
   padding: 0 20px 0 1px;
 }
 
-
 .button-td {
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
 }
-
 
 table {
   width: 60%;
@@ -140,10 +136,14 @@ td, th {
 }
 
 #background {
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .3);
   height: 100%;
   padding-top: 0;
   margin-top: 0;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #reviews-vendor-image {
@@ -159,3 +159,4 @@ td, th {
   height: 400px; 
   width: 50%; 
  }
+
