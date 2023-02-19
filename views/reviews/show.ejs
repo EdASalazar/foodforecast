@@ -76,53 +76,53 @@
                     <% if (user) { %>
                         <table id="table-add-comment" class="table">
                             <thead>
-                               
-                                <th>
-                                    <form action="/reviews/<%= review.id %>/favorites" method="POST">
-                                        <button class="btn btn-default" type="submit">Add it to your favorites!</button>
-                                    </form></th>
-                                <th>Add A Comment!</th>
-                            </thead>
-                            <tbody>
-                                <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
-                                    <tr>
-                                        <td><label>What's on your mind?</label></td>
-                                        <td><textarea name="feedback" rows=1></textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td> <label> How helpful was this review?</td></label>
-                                        <td><select name="rateReview">
-                                            <option value="0">Required Field</option>
-                                            <option value="1">Not Helpful</option>
-                                            <option value="2">Sort of Helpful</option>
-                                            <option value="3">Really Helpful</option>
-                                        </td>
-                                    </tr>
-                                </select>
-                                <tr>
-                                    <td class="button-td"></td>
-                                    <td class="button-td"><button type="submit">Submit</button></td>
-                                </tr>
+                                    <th>Add A Comment!</th>
+                                </thead>
+                                <tbody>
+                                    <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
+                                        <tr>
+                                            <td><label>What's on your mind?</label></td>
+                                            <td><textarea name="feedback" rows=1></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <label> How helpful was this review?</td></label>
+                                            <td>
+                                                <select name="rateReview">
+                                                    <option value="0">Required Field</option>
+                                                    <option value="1">Not Helpful</option>
+                                                    <option value="2">Sort of Helpful</option>
+                                                    <option value="3">Really Helpful</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                <div class="col-xs-3">
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                </div>
                             </form>
-                        </tbody>
-                    </table>
-           
-                    
-                    <% } %>
-                    
-                    <% if (user?._id.equals(review.user._id)) { %>
-                        <table class="table-buttons table">
-                            <tr>
-                                <td class="button-td">
-                                    <form action="/reviews/<%= review.id %>/edit" method="GET"><button
-                                            type="submit">EDIT</button>
+                            <% } %>
+                            <form action="/reviews/<%= review.id %>/favorites" method="POST">
+                                <div class="col-xs-3">
+                                        <button class="btn btn-default" type="submit">
+                                            <i class="fa fa-thumbs-up"></i>Fave It!
+                                        </button>
+                                    </div>
+                                </form>
+                                <% if (user?._id.equals(review.user._id)) { %>
+                                    <form action="/reviews/<%= review.id %>/edit" method="GET">
+                                        <div class="col-xs-3">
+                                            <button type="submit" class="btn btn-default">EDIT</button>
                                     </form>
-                                </td>
-                                <td class="button-td">
-                                    <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST"><button
-                                            type="submit">DELETE</button></form>
-                                </td>
-                            </tr>
-                        </table>
-                    <% } %>
- <%- include('../partials/footer') %>
+                                </div>
+                                <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST">
+                                    <div class="col-xs-3">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>DELETE
+                                        </button>
+                                    </form>
+                                    <% } %>
+                                </div>
+                                </div>
+                            <%- include('../partials/footer') %>
