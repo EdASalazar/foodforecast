@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
     
-</table>
-    <table id="details-reviews">
+
+    <table id="details-reviews" class="table">
         <thead>
             <tr>
                 <th><img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer">
@@ -32,7 +32,7 @@
                     <%= review.createdAt.toLocaleDateString() %>
                 </td>
 
-                <table id="table-story">
+                <table id="table-story" class="table">
                     <thead>
                         <th>Story</th>
                     </thead>
@@ -46,7 +46,7 @@
 
 
                 
-                <table id="table-show-comments">
+                <table id="table-show-comments" class="table">
                     <thead>
                         <tr>
                             <th>Feedback</th>
@@ -75,7 +75,7 @@
                         
                     </table>
                     <% if (user) { %>
-                        <table id="table-add-comment">
+                        <table id="table-add-comment" class="table">
                             <thead>
                                
                                 <th>
@@ -112,7 +112,7 @@
                     <% } %>
                     
                     <% if (user?._id.equals(review.user._id)) { %>
-                        <table class="table-buttons">
+                        <table class="table-buttons table">
                             <tr>
                                 <td class="button-td">
                                     <form action="/reviews/<%= review.id %>/edit" method="GET"><button
