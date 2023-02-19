@@ -1,128 +1,145 @@
 <%- include('../partials/header') %>
-    
-
-    <table id="details-reviews" class="table">
+<div class="table-responsive">
+<table id="details-reviews" class="table">
+    <thead>
+        <tr>
+            <th>
+                <img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer">
+            </th>
+            <th>Author</th>
+            <th>Vendor</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <img class="img-responsive" src="<%= review.vendorImg %>" id="vendor-image">
+            </td>
+            <td>
+                <%= review.userName %>
+            </td>
+            <td>
+                <%= review.vendor.name %>
+            </td>
+            <td>
+                <%= review.rating %>
+            </td>
+            <td>
+                <%= review.price %>
+            </td>
+            <td>
+                <%= review.createdAt.toLocaleDateString() %>
+            </td>
+    </tbody>
+</table>
+<table id="table-story" class="table">
+    <thead>
+        <th>Story</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-justify">
+                <%- review.blog.replaceAll('\n', '<br>') %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table id="table-show-comments" class="table">
+    <thead>
+        <tr>
+            <th>Feedback</th>
+            <th>Helpfulness</th>
+            <th>Author</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% comment.forEach(function(c) { %>
+        <tr>
+            <td class="text-justify">
+                <%- c.feedback.replaceAll('\n', '<br>') %>
+            </td>
+            <td>
+                <%= c.rateReview %>
+            </td>
+            <td>
+                <%= c.userName %>
+            </td>
+            <td>
+                <%= c.createdAt.toLocaleDateString() %>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+<% if (user) { %>
+    <table id="table-add-comment" class="table">
         <thead>
-            <tr>
-                <th><img alt="avatar" id="review-avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer">
-                </th>
-                <th>Author</th>
-                <th>Vendor</th>
-                <th>Rating</th>
-                <th>Price</th>
-                <th>Created</th>
-            </tr>
+            <th>Add A Comment!</th>
         </thead>
         <tbody>
-            <tr>
-                <td><img class="img-responsive" src="<%= review.vendorImg %>" id="vendor-image"></td>
-                <td>
-                    <%= review.userName %>
-                </td>
-                <td>
-                    <%= review.vendor.name %>
-                </td>
-                <td>
-                    <%= review.rating %>
-                </td>
-                <td>
-                    <%= review.price %>
-                </td>
-                <td>
-                    <%= review.createdAt.toLocaleDateString() %>
-                </td>
-
-                <table id="table-story" class="table">
-                    <thead>
-                        <th>Story</th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="text-justify"><%- review.blog.replaceAll('\n', '<br>') %>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-                
-                <table id="table-show-comments" class="table">
-                    <thead>
-                        <tr>
-                            <th>Feedback</th>
-                            <th>Helpfulness</th>
-                            <th>Author</th>
-                            <th>Created</th>
-                        </tr>
-                    </thead>
-                    <% comment.forEach(function(c) { %>
-                        <tr>
-                         
-                                <td class="text-justify"><%- c.feedback.replaceAll('\n', '<br>') %>
-                            </td>
-                            <td>
-                                <%= c.rateReview %>
-                            </td>
-                            <td>
-                                <%= c.userName %>
-                            </td>
-                            <td>
-                                <%= c.createdAt.toLocaleDateString() %>
-                            </td>
-                        </tr>
-                        <% }); %>
-                        
-                    </table>
-                    <% if (user) { %>
-                        <table id="table-add-comment" class="table">
-                            <thead>
-                                    <th>Add A Comment!</th>
-                                </thead>
-                                <tbody>
-                                    <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
-                                        <tr>
-                                            <td><label>What's on your mind?</label></td>
-                                            <td><textarea name="feedback" rows=1></textarea></td>
-                                        </tr>
-                                        <tr>
-                                            <td> <label> How helpful was this review?</td></label>
-                                            <td>
-                                                <select name="rateReview">
-                                                    <option value="0">Required Field</option>
-                                                    <option value="1">Not Helpful</option>
-                                                    <option value="2">Sort of Helpful</option>
-                                                    <option value="3">Really Helpful</option>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="row">
-                                <div class="col-xs-3">
-                                    <button type="submit" class="btn btn-default">Submit</button>
-                                </div>
-                            </form>
-                            <% } %>
-                            <form action="/reviews/<%= review.id %>/favorites" method="POST">
-                                <div class="col-xs-3">
-                                        <button class="btn btn-default" type="submit">
-                                            <i class="fa fa-thumbs-up"></i>Fave It!
-                                        </button>
-                                    </div>
-                                </form>
-                                <% if (user?._id.equals(review.user._id)) { %>
-                                    <form action="/reviews/<%= review.id %>/edit" method="GET">
-                                        <div class="col-xs-3">
-                                            <button type="submit" class="btn btn-default">EDIT</button>
-                                    </form>
-                                </div>
-                                <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST">
-                                    <div class="col-xs-3">
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>DELETE
-                                        </button>
-                                    </form>
-                                    <% } %>
-                                </div>
-                                </div>
-                            <%- include('../partials/footer') %>
+            <form action="/reviews/<%= review.id %>/comments" id="add-comment-form" method="POST">
+                <tr>
+                    <td>
+                        <label>
+                            What's on your mind?
+                        </label>
+                    </td>
+                    <td>
+                        <textarea name="feedback" rows=1></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            How helpful was this review?
+                        </label>
+                    </td>
+                    <td>
+                        <select name="rateReview">
+                            <option value="0">Required Field</option>
+                            <option value="1">Not Helpful</option>
+                            <option value="2">Sort of Helpful</option>
+                            <option value="3">Really Helpful</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <button type="submit" class="btn btn-default">
+                Submit
+            </button>
+        </div>
+    </form>
+    <% } %>
+    <form action="/reviews/<%= review.id %>/favorites" method="POST">
+        <div class="col-xs-3">
+            <button class="btn btn-default" type="submit">
+                <i class="fa fa-thumbs-up"></i>Fave It!
+            </button>
+        </div>
+    </form>
+    <% if (user?._id.equals(review.user._id)) { %>
+        <form action="/reviews/<%= review.id %>/edit" method="GET">
+            <div class="col-xs-3">
+                <button type="submit" class="btn btn-default">
+                    EDIT
+                </button>
+            </form>
+        </div>
+        <form action="/reviews/<%= review.id %>?_method=DELETE" method="POST">
+            <div class="col-xs-3">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>DELETE
+                </button>
+            </form>
+            <% } %>
+        </div>
+    </div>
+ <%- include('../partials/footer') %>
