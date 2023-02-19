@@ -38,7 +38,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><%- review.blog.replaceAll('\n', '<br>') %>
+                        <td class="text-justify"><%- review.blog.replaceAll('\n', '<br>') %>
                         </td>
                     </tr>
                     </tbody>
@@ -58,8 +58,7 @@
                     <% comment.forEach(function(c) { %>
                         <tr>
                          
-                                <td><%- c.feedback.replaceAll('\n', '<br>') %>
-                                <%= c.feedback %>
+                                <td class="text-justify"><%- c.feedback.replaceAll('\n', '<br>') %>
                             </td>
                             <td>
                                 <%= c.rateReview %>
@@ -80,7 +79,7 @@
                                
                                 <th>
                                     <form action="/reviews/<%= review.id %>/favorites" method="POST">
-                                        <button type="submit">Add it to your favorites!</button>
+                                        <button class="btn btn-default" type="submit">Add it to your favorites!</button>
                                     </form></th>
                                 <th>Add A Comment!</th>
                             </thead>
