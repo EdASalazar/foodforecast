@@ -57,7 +57,6 @@ function update(req, res) {
         function(err, review) {
             if (err|| !review) return res.redirect('/reviews');
             res.redirect(`/reviews/${review._id}`);
-            console.log(review);
         }
      );
 }
