@@ -50,7 +50,6 @@ async function edit(req, res) {
 }
 
 function update(req, res) {
-    console.log(req.params.id);
     Review.findOneAndUpdate({_id: req.params.id, user: req.user._id},
         req.body,
         {new: true},
