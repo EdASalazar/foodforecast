@@ -78,6 +78,10 @@ nav > a.active {
   object-fit: contain;
 }
 
+table {
+  width: 100%;
+}
+
 table thead th {
   border-bottom: 2px solid #424748;
   background-color: rgba(95, 95, 95, .85);
