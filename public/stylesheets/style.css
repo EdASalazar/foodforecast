@@ -89,13 +89,7 @@ nav > a.active {
   object-fit: contain;
 }
 
-table {
-  font-size: 15px;
-  padding-bottom: 30px;
-}
-
 table thead th {
-  padding: 5px;
   border-bottom: 2px solid #424748;
   background-color: rgba(95, 95, 95, .93);
   color: white;
@@ -107,32 +101,12 @@ table td {
   background-color: rgba(255, 255, 255, .88);
   border: solid lightgray .25px;
   
-}
+} 
 
 #nav-avatar {
   border-radius: 50%;
   object-fit: contain;
   padding: 0 20px 0 1px;
-}
-
-.button-td {
-  background-color: rgba(255, 255, 255, 0);
-  border: 0px;
-}
-
-table {
-  width: 60%;
-  
-}
-
-td, th {
-  white-space: nowrap;
-}
-
-.table-buttons {
-  display: flex;
-  justify-content: left;
-  
 }
 
 #background {
