@@ -80,8 +80,9 @@ nav > a.active {
 
 table thead th {
   border-bottom: 2px solid #424748;
-  background-color: rgba(95, 95, 95, .93);
+  background-color: rgba(95, 95, 95, .85);
   color: white;
+  text-align: center; 
 }
 
 table td {
@@ -95,17 +96,6 @@ table td {
   border-radius: 50%;
   object-fit: contain;
   padding: 0 20px 0 1px;
-}
-
-#background {
-  background-color: rgba(255, 255, 255, .3);
-  height: 100%;
-  padding-top: 0;
-  margin-top: 0;
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #reviews-vendor-image {
