@@ -1,22 +1,26 @@
 <%- include('../partials/header') %>
 
-   
-<table class="table">
-    <form action="/reviews/<%= review.id %>?_method=PUT" method="POST" id="form-edit">
-    <tr>
-        <td><label>Update Story</label>
-        </td>
-        <td>
-<textarea name="blog" id="blog" cols="25" rows="2" placeholder="<%= review.blog %>"><%- review.blog %></textarea>
-        </td>
-    </tr> 
-    <tr>
-       <td class="button-td"><button class="btn btn-default" type="submit">EDIT</button></td>
-    </tr>
-    </form>
-</table>
-   
-               
-   
+<form action="/reviews/<%= review.id %>?_method=PUT" method="POST" id="form-edit">
+    <table class="table">
+        <thead>
+            <th>
+                Update Story
+            </th>
+        </thead>
+        <tr>
+            <td class="text-justify">
+                <textarea name="blog" id="blog" cols="25" rows="2" placeholder="<%= review.blog.replaceAll('\n', '<br>') %>">
+                    <%- review.blog %>
+                </textarea>
+            </td>
+        </tr> 
 
+    </table>
+        <div class="row">
+            <button class="btn btn-default" type="submit">
+                EDIT
+            </button>
+        </div>
+</form>
+   
     <%- include('../partials/footer') %>

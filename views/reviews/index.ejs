@@ -1,16 +1,15 @@
 <%- include('../partials/header') %>
+
 <div class="table-responsive">
     <table id="all-reviews" class="table">
         <thead>
-            <tr>
-                
+            <tr>  
                 <th>Vendor</th>
                 <th>Street</th>
                 <th>Rating</th>
                 <th>Price</th>
                 <th>Author</th>
-                <th>More Info</th>
-                
+                <th>More Info</th>  
         </thead>
         <tbody>
             <% reviews.forEach(function(r) { %>
@@ -21,8 +20,7 @@
                 <td><%= r.price %></td>
                 <td><%= r.userName %></td>
                 <td><a href="/reviews/<%= r._id %>">Details</a></td>
-            </tr> 
-                
+            </tr>    
             <% }); %>
         </tbody>
     </table>
