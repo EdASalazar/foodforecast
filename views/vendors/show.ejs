@@ -1,20 +1,22 @@
 <%- include('../partials/header') %>
-<table id="details-vendors" class="table">
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        </tr>
-    </thead>
-        <tr>
-            <td><%= vendor.name %></td>
-            <td><%= vendor.streetAddress %></td>
-            <td><%= vendor.city %></td>
-            <td><%= vendor.state %></td>
-        </tr>
-</table>
+<div class="table-responsive">
+    <table id="details-vendors" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+            </tr>
+        </thead>
+            <tr>
+                <td><%= vendor.name %></td>
+                <td><%= vendor.streetAddress %></td>
+                <td><%= vendor.city %></td>
+                <td><%= vendor.state %></td>
+            </tr>
+    </table>
+</div>
 
 
 

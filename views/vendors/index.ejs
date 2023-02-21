@@ -1,37 +1,34 @@
 <%- include('../partials/header') %>
-<table id="all-vendors" class="table">
-    <thead>
-        <tr>
+<div class="table-responsive">
+    <table id="all-vendors" class="table">
+        <thead>
+            <tr>
             <th>Vendor</th>
             <th>Address</th>
             <th>City</th>
             <th>State</th>
             <th>Zip Code</th>
             
-    </thead>
-    <tbody>
-        <% vendors.forEach(function(v) { %>
+        </thead>
+        <tbody>
+            <% vendors.forEach(function(v) { %>
            <tr> 
             <td><%= v.name %></td>
             <td><%= v.streetAddress %></td>
             <td><%= v.city %></td>
             <td><%= v.zipcode %></td>
             <td><a href="/vendors/<%= v._id %>">Details</a></td>
-           </tr> 
-            
-       <% }); %>
-    <tr><td class="button-td">
-        <form action="/vendors/new" method="GET">
-        <button class="btn btn-default" type="submit">Add Vendor</button>
-        </form>
-    </td>
-    </tr>
+           </tr>
+           <% }); %>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <form action="/vendors/new" method="GET">
+        <button class="btn btn-default" type="submit">
+            Add Vendor
+        </button>
     </form>
-    </tbody>
-</table>
-<br>
+</div>
 
-<!-- <form action="/vendors/new" method="GET">
-    <button type="submit">Add Vendor</button>
-</form> -->
 <%- include('../partials/footer') %>
