@@ -29,10 +29,6 @@ body {
     background-blend-mode: hard-light;
 }
 
-a {
-  color: rgb(46, 63, 58);
-}
-
 body > nav {
   grid-area: nav;
   background-color: rgba(44, 89, 149, .6);
@@ -69,13 +65,6 @@ nav > a.active {
   margin-left: 20px;
 }
 
-#foodcart-logo {
-  width: 70px;
-  object-fit: contain;
-  margin-right: auto;
-  border-radius: 50%;
-}
-
 #vendor-image {
   width: 100px;
   object-fit: contain;
@@ -96,8 +85,7 @@ table thead th {
 }
 
 table td {
-  padding: 3px;
-  text-align: center;
+  text-align: center; 
   background-color: rgba(255, 255, 255, .88);
   border: solid lightgray .25px;
   
