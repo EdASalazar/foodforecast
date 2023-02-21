@@ -1,33 +1,38 @@
 <%- include('../partials/header') %>
-<table id="all-reviews" class="table">
-    <thead>
-        <tr>
-            
-            <th>Vendor</th>
-            <th>Street</th>
-            <th>Rating</th>
-            <th>Price</th>
-            <th>Author</th>
-            <th>More Info</th>
-            
-    </thead>
-    <tbody>
-        <% reviews.forEach(function(r) { %>
-           <tr> 
-            <td><%= r.vendor.name %></td>
-            <td><%= r.vendor.streetAddress %></td>
-            <td><%= r.rating %></td>
-            <td><%= r.price %></td>
-            <td><%= r.userName %></td>
-            <td><a href="/reviews/<%= r._id %>">Details</a></td>
-           </tr> 
-            
-           <% }); %>
-           <tr><td class="button-td">
-           <a href="/reviews/favorites"><button>Favorites</button></a>
-           </td></tr>
-    </tbody>
-</table>
-
+<div class="table-responsive">
+    <table id="all-reviews" class="table">
+        <thead>
+            <tr>
+                
+                <th>Vendor</th>
+                <th>Street</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>More Info</th>
+                
+        </thead>
+        <tbody>
+            <% reviews.forEach(function(r) { %>
+            <tr> 
+                <td><%= r.vendor.name %></td>
+                <td><%= r.vendor.streetAddress %></td>
+                <td><%= r.rating %></td>
+                <td><%= r.price %></td>
+                <td><%= r.userName %></td>
+                <td><a href="/reviews/<%= r._id %>">Details</a></td>
+            </tr> 
+                
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <a href="/reviews/favorites">
+        <button class="btn btn-default">
+            Favorites
+        </button>
+    </a>
+</div>
 
 <%- include('../partials/footer') %>
