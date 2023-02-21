@@ -11,8 +11,7 @@
   </head>
   
   <body>
-   
-    <nav>
+     <nav>
       <a href="/vendors/" <%- title === 'Vendor List' ? 'class="active"' : '' %>>Vendors</a>
       |
       <a href="/reviews/" <%- title === 'Reviews' ? 'class="active"' : '' %>>Reviews</a>
@@ -27,6 +26,5 @@
         <% } %>
     </nav>
     <main>
-      <!-- <section id="background"> -->
         <div class="container-fluid">
           <h1 class="text-primary text-center"><%= title %></h1>
