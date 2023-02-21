@@ -1,32 +1,53 @@
 <%- include('../partials/header') %>
+<div class="table-responsive">
     <section id="add-review">
         <table class="table">
             <form action="/reviews" method="POST" id="form-review">
                 <tr>
-                    <td><label>Vendor:</label></td>
-                    <td><select name="vendor">
-                            <option value="">Select A Vendor</option>
+                    <td>
+                        <label>
+                            Vendor:
+                        </label>
+                    </td>
+                    <td>
+                        <select name="vendor">
+                            <option value="">
+                                Select A Vendor
+                            </option>
                             <%- vendors.map(v=>
-                                `<option value="${v._id}">${v.name} - ${v.streetAddress}, ${v.state}</option>`
-
-                                ).join('') %>
+                            `<option value="${v._id}">
+                                ${v.name} - ${v.streetAddress}, ${v.state}
+                            </option>`
+                            ).join('') %>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Can't Find the Vendor</td>
-                    <td><a href="/vendors/new">Add Them Here</a></td>
+                    <td>
+                        Can't Find the Vendor
+                    </td>
+                    <td>
+                        <a href="/vendors/new">
+                            Add Them Here
+                        </a>
+                    </td>
                 </tr>
                 <tr>
-                    <td><label>Rating:</label></td>
-                    <td><select name="rating">
+                    <td>
+                        <label>
+                            Rating:
+                        </label>
+                    </td>
+                    <td>
+                        <select name="rating">
                             <option value="0">Required</option>
                             <option value="1">Skip It!</option>
                             <option value="2">I mean you're here and you're drunk!</option>
                             <option value="3">Sure, why not?</option>
                             <option value="4">It's only a little out of the way!</option>
                             <option value="5">Plan a road trip!</option>
-                        </select> </td>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><label>Price:</label></td>
@@ -45,12 +66,15 @@
                     </td>
                 </tr>
         </table>
+    </div>
+    <div class="table-responsive">
         <table class="table">
             <tr>
                 <td><label>Add Image:</label></td>
                 <td><input id="vendorImg" type="text" name="vendorImg" placeholder="Enter URL"></td>
             </tr>
         </table>
+    </div>
         <button class="btn btn-default" type="submit">Submit Review</button>
         </form>
     </section>
