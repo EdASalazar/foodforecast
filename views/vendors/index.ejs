@@ -3,21 +3,21 @@
     <table id="all-vendors" class="table">
         <thead>
             <tr>
-            <th>Vendor</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
-            
+                <th>Vendor</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+            </tr>
         </thead>
         <tbody>
             <% vendors.forEach(function(v) { %>
            <tr> 
-            <td><%= v.name %></td>
-            <td><%= v.streetAddress %></td>
-            <td><%= v.city %></td>
-            <td><%= v.zipcode %></td>
-            <td><a href="/vendors/<%= v._id %>">Details</a></td>
+                <td><%= v.name %></td>
+                <td><%= v.streetAddress %></td>
+                <td><%= v.city %></td>
+                <td><%= v.zipcode %></td>
+                <td><a href="/vendors/<%= v._id %>">Details</a></td>
            </tr>
            <% }); %>
         </tbody>
