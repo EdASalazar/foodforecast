@@ -22,7 +22,7 @@ Github: [Food Forecast](https://github.com/EdASalazar/foodforecast)
 * OAuth
 * Google API
 
-## About Foode Forecast
+## About Food Forecast
 
 I left my class one night trying to think about what I would want to spend time on. Finding a project that you have a passion for can make the hard work a little easier. A few minutes later I was buying tacos down the street from Tacos La Geura. 
 
