@@ -1,0 +1,2 @@
+launch local npx nodemon
+
